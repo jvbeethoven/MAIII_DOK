@@ -1,7 +1,84 @@
 @import 'reset';
 
+:root {
+  --container-width: calc(100% - .2rem);
+  --light-blue: #a2d5ff;
+  --light-green: #99e7d9;
+  --light-pink: #ffc8db;
+  --light-purple: #e2b6e8;
+  --dark-purple: #525fe8;
+}
+
 body {
-  font-family: Roboto;
+  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  color: white;
   font-size: 3rem;
-  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.header {
+
+  background-color: var(--light-green);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  &-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 8vh;
+
+    background-color: white;
+    box-shadow: 0 .5rem 1.2rem 0 rgba(0, 200, 200, .85);
+    color: var(--dark-purple);
+
+    &-items {
+      margin-left: 20vw;
+    }
+
+    &-item {
+      text-decoration: none;
+    }
+  }
+
+  &-title, &-date, &-place {
+    position: absolute;
+    font-size: 2vw;
+  }
+
+  &-title {
+    height: 50vw;
+    width: 80vw;
+    margin: 3rem 0 -10rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../assets/img/header-img.png) no-repeat;
+    background-size: 100%;
+    top: 10%;
+
+    &-hidden {
+      visibility: hidden;
+    }
+  }
+
+  &-date {
+    top: 78%;
+  }
+
+  &-place {
+    top: 83%;
+  }
+
 }
