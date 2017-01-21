@@ -3,14 +3,14 @@
 :root {
   --container-width: calc(100% - .2rem);
   --light-blue: #a2d5ff;
-  --light-green: #99e7d9;
+  --light-green: #ccfbf8;
   --light-pink: #ffc8db;
   --light-purple: #e2b6e8;
   --dark-purple: #525fe8;
 }
 
 body {
-  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  font-family: Monaco, Consolas, 'Lucida Console', monospace;
   color: white;
   font-size: 3rem;
   display: flex;
@@ -24,6 +24,7 @@ body {
 .header {
 
   background-color: var(--light-green);
+  color: var(--dark-purple);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -40,7 +41,7 @@ body {
     height: 8vh;
 
     background-color: white;
-    box-shadow: 0 .5rem 1.2rem 0 rgba(0, 200, 200, .85);
+    box-shadow: 0 .5rem 1.2rem 0 rgba(100, 250, 240, .95);
     color: var(--dark-purple);
 
     &-items {
@@ -51,34 +52,106 @@ body {
       text-decoration: none;
     }
   }
+}
+
+.header-container {
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100vw;
+  height: 45vw;
 
   &-title, &-date, &-place {
-    position: absolute;
     font-size: 2vw;
+    z-index: 5;
   }
 
   &-title {
-    height: 50vw;
+    height: 20vw;
     width: 80vw;
     margin: 3rem 0 -10rem 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../assets/img/header-img.png) no-repeat;
+
+    background: url(../assets/img/header/titel.png) no-repeat;
     background-size: 100%;
-    top: 10%;
+
+    position: absolute;
+    top: 25%;
+    z-index: 3;
 
     &-hidden {
       visibility: hidden;
     }
   }
 
+  &-img1 {
+    background: url(../assets/img/header/blue.png) no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: 19%;
+    height: 37vw;
+    width: 85vw;
+    z-index: 2;
+  }
+
+  &-img2 {
+    background: url(../assets/img/header/pink.png) no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: 45%;
+    right: 17%;
+    height: 40vw;
+    width: 70vw;
+  }
+
+  &-img3 {
+    background: url(../assets/img/header/purple.png) no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: 27%;
+    height: 90vw;
+    width: 90vw;
+  }
+
+  &-img4 {
+    background: url(../assets/img/header/crane.png) no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: 2%;
+    /*left: 0%;*/
+    height: 27vw;
+    width: 25vw;
+  }
+
+  &-img5 {
+    background: url(../assets/img/header/flag.png) no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    height: 37vw;
+    width: 15vw;
+    z-index: 1;
+  }
+
   &-date {
-    top: 78%;
+    position: absolute;
+    top: 90%;
   }
 
   &-place {
-    top: 83%;
+    position: absolute;
+    top: 95%;
   }
-
 }
