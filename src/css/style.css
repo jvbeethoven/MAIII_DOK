@@ -61,28 +61,33 @@ body {
   flex-direction: column;
   align-items: center;
 
-  width: 100vw;
-  height: 45vw;
+  width: 80vw;
+  height: 50vw;
 
   &-title, &-date, &-place {
     font-size: 2vw;
     z-index: 5;
   }
 
-  &-title {
-    height: 20vw;
+  &-images {
+    position: relative;
     width: 80vw;
-    margin: 3rem 0 -10rem 0;
+    height: 30vw;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+  }
+
+  &-title {
+    height: 15vw;
+    width: 60vw;
 
     background: url(../assets/img/header/titel.png) no-repeat;
     background-size: 100%;
 
     position: absolute;
-    top: 25%;
+    top: 50%;
     z-index: 3;
 
     &-hidden {
@@ -95,9 +100,9 @@ body {
     background-size: 100%;
 
     position: absolute;
-    top: 19%;
-    height: 37vw;
-    width: 85vw;
+    top: 40%;
+    height: 27vw;
+    width: 65vw;
     z-index: 2;
   }
 
@@ -106,10 +111,10 @@ body {
     background-size: 100%;
 
     position: absolute;
-    top: 45%;
+    top: 57%;
     right: 17%;
-    height: 40vw;
-    width: 70vw;
+    height: 30vw;
+    width: 60vw;
   }
 
   &-img3 {
@@ -117,9 +122,9 @@ body {
     background-size: 100%;
 
     position: absolute;
-    top: 27%;
-    height: 90vw;
-    width: 90vw;
+    top: 40%;
+    height: 35vw;
+    width: 70vw;
   }
 
   &-img4 {
@@ -127,10 +132,10 @@ body {
     background-size: 100%;
 
     position: absolute;
-    top: 2%;
+    top: 12%;
     /*left: 0%;*/
     height: 27vw;
-    width: 25vw;
+    width: 20vw;
   }
 
   &-img5 {
@@ -138,8 +143,8 @@ body {
     background-size: 100%;
 
     position: absolute;
-    top: 2%;
-    right: 10%;
+    top: 12%;
+    right: 15%;
     height: 37vw;
     width: 15vw;
     z-index: 1;
@@ -147,11 +152,11 @@ body {
 
   &-date {
     position: absolute;
-    top: 90%;
+    top: 87%;
   }
 
   &-place {
     position: absolute;
-    top: 95%;
+    top: 92%;
   }
 }
