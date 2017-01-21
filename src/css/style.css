@@ -4,7 +4,7 @@
   --container-width: calc(100% - .2rem);
   --light-blue: #a2d5ff;
   --light-green: #ccfbf8;
-  --light-pink: #ffc8db;
+  --light-pink: #ffa39c;
   --light-purple: #e2b6e8;
   --dark-purple: #525fe8;
 }
@@ -14,24 +14,21 @@ body {
   color: white;
   font-size: 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
 }
 
 .header {
-
   background-color: var(--light-green);
   color: var(--dark-purple);
-  height: 100vh;
+  height: 55vw;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   position: relative;
+  z-index: -5;
 
   &-nav {
     display: flex;
@@ -40,17 +37,25 @@ body {
     width: 100vw;
     height: 8vh;
 
+    font-family: arial;
+    font-weight: bold;
+    font-size: 2vw;
+
     background-color: white;
-    box-shadow: 0 .5rem 1.2rem 0 rgba(100, 250, 240, .95);
-    color: var(--dark-purple);
+    box-shadow: 0 .5rem 1.2rem 0 rgba(150, 250, 240, .95);
+  }
+}
 
-    &-items {
-      margin-left: 20vw;
-    }
+.header-nav-item {
 
-    &-item {
-      text-decoration: none;
-    }
+  text-decoration: none;
+  margin-right: 7vw;
+  padding-bottom: 1rem;
+  color: var(--dark-purple);
+  position: relative;
+
+  &:hover {
+    color: var(--light-pink);
   }
 }
 
@@ -152,11 +157,79 @@ body {
 
   &-date {
     position: absolute;
-    top: 87%;
+    top: 82%;
   }
 
   &-place {
     position: absolute;
-    top: 92%;
+    top: 87%;
   }
+}
+
+.general {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: 75vw;
+
+  &-article-news, &-article-dok, &-article-agenda {
+    margin-bottom: 7rem;
+    box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, .2);
+  }
+}
+
+.general-article-news {
+
+  width: 40rem;
+  height: 46rem;
+
+  &-title {
+    height: 10rem;
+    background-color: var(--light-pink);
+  }
+
+  &-img {
+    height: 36rem;
+  }
+
+  &-one {
+    order: 1;
+  }
+
+  &-two {
+    order: 4;
+  }
+
+  &-three {
+    order: 5;
+    width: 75vw;
+    height: 75rem;
+  }
+
+}
+
+.general-article-dok {
+
+  background-color: var(--dark-purple);
+
+  width: 40vw;
+  height: 46rem;
+  padding: 2rem 8rem;
+  order: 2;
+  font-size: 1.8rem;
+
+}
+
+.general-article-agenda {
+
+  background-color: var(--dark-purple);
+
+  width: 39vw;
+  height: 46rem;
+  font-size: 2rem;
+  padding: 2rem 4rem;
+
+  order: 3;
+
 }
