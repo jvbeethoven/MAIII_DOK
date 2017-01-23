@@ -2,8 +2,8 @@
 class DAO {
   private static $dbHost = "localhost";
   private static $dbName = "ma3_dok";
-  private static $dbUser = "ma3_dok";
-  private static $dbPass = "ma3_dok";
+  private static $dbUser = "root";
+  private static $dbPass = "root";
   private static $sharedPDO;
 
   protected $pdo;

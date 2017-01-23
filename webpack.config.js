@@ -8,8 +8,7 @@ const publicPath = `/`;
 const config = {
   entry: {
     style: `./src/css/style.css`,
-    script: `./src/js/script.js`,
-    stats: `./src/js/stats.js`
+    script: `./src/js/script.js`
   },
   output: {
     path: path.resolve(`./dist`),
