@@ -1,5 +1,4 @@
 let mouseX, mouseY;
-// let y;
 
 export default ({element, xPos = 0, yPos = 0} = {}) => {
   document.addEventListener(`mousemove`, handleMouseMove);
@@ -18,14 +17,12 @@ const move = (element, xPos, yPos) => {
   const height = document.body.clientHeight;
   const width = document.body.clientWidth;
 
-  const yValue = mapRange(mouseY, 0, height, yPos - 1, yPos + 1);
+  const yValue = mapRange(mouseY, 0, height, yPos - 3, yPos + 3);
   const xValue = mapRange(mouseX, 0, width, xPos - 1, xPos + 1);
 
 
   element.style.left = `${xValue}%`;
   element.style.top = `${(yValue)}%`;
-
-  // console.log(yValue);
 
   requestAnimationFrame(() => move(element, xPos, yPos));
 };
