@@ -19,12 +19,12 @@
 
 <main>
   <section class="events-search">
-    <form class="events-search-form-search" action="index.php?page=event" method="get">
-      <input type="text" id="search" name="search" placeholder="Zoeken" value="" autocomplete="on"><br/>
-      <input type="hidden" name="page" value="search">
+    <form class="events-search-form-search" action="index.php?page=event" method="post">
+      <input type="text" id="search" name="query" placeholder="Zoeken" value="" autocomplete="on"><br/>
+      <input type="hidden" name="page" value="event">
       <input type="submit" name="action" value="Zoek">
     </form>
-    <form class="events-search-form-tag" action="index.php?page=event" method="get">
+    <form class="events-search-form-tag" action="index.php?page=event" method="post">
       <select class="events-search-form-tag-select" name="Soort evenement">
         <option value='selected'>Soort evenement</option>
         <option value='1 juli'>Circus</option>
@@ -33,7 +33,7 @@
       </select>
     </form>
 
-    <form class="events-search-form-month" action="index.php?page=event" method="get">
+    <form class="events-search-form-month" action="index.php?page=event" method="post">
       <select class="events-search-form-month-select" name="Wanneer">
         <option value='selected'>Wanneer</option>
         <option value='Mei'>Mei</option>

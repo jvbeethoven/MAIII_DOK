@@ -13,9 +13,13 @@ class EventsController extends Controller {
 
   public function index() {
 
-    // $this->_searchEventsIfNeeded();
-    $events = $this->eventDAO->selectAllAfterToday();
-    $this->set('events', $events);
+    if( !isset( $_POST["query"]) ){
+      $events = $this->eventDAO->selectAllAfterToday();
+      $this->set('events', $events);
+    } else {
+      $this->_searchEventsIfNeeded();
+    }
+
 
   }
 
@@ -24,9 +28,9 @@ class EventsController extends Controller {
 
     // example: search on title
     $conditions[0] = array(
-      'field' => 'search',
+      'field' => 'title',
       'comparator' => 'like',
-      'value' => '$_GET["query"]'
+      'value' => $_POST["query"]
     );
 
     // example: search on tag name
@@ -50,6 +54,9 @@ class EventsController extends Controller {
 
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
+
+
   }
+
 
 }
