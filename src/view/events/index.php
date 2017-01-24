@@ -19,30 +19,35 @@
 
 <main>
   <section class="events-search">
+
     <form class="events-search-form-search" action="index.php?page=event" method="post">
-      <input type="text" id="search" name="query" placeholder="Zoeken" value="" autocomplete="on"><br/>
-      <input type="hidden" name="page" value="event">
-      <input type="submit" name="action" value="Zoek">
+      <input type="text" class="events-search-form-input" name="query" placeholder="Zoeken" value="" autocomplete="off"><br/>
+      <!-- <input type="hidden" name="page" value="event"> -->
+      <input type="submit" name="action" value="Zoek" class="events-search-form-submit">
     </form>
+
     <form class="events-search-form-tag" action="index.php?page=event" method="post">
-      <select class="events-search-form-tag-select" name="Soort evenement">
-        <option value='selected'>Soort evenement</option>
-        <option value='1 juli'>Circus</option>
-        <option value='2 juli'>Iets</option>
-        <option value='3 juli'>Feest</option>
+      <select class="events-search-form-tag-select" name="tag">
+        <option value='' disabled selected>Soort evenement</option>
+        <?php foreach($tags as $tag): ?>
+        <option value='<?php echo $tag['tag'];?>'><?php echo $tag['tag'];?></option>
+        <? endforeach;?>
       </select>
+      <input type="submit" name="action" value="zoek">
     </form>
 
     <form class="events-search-form-month" action="index.php?page=event" method="post">
-      <select class="events-search-form-month-select" name="Wanneer">
-        <option value='selected'>Wanneer</option>
-        <option value='Mei'>Mei</option>
+      <select class="events-search-form-month-select" name="month">
+        <option value='' disabled selected>Wanneer</option>
+        <option value="Mei" data-start="2017-05-01 00:00:00" data-end="2017-05-31 23:59:59">Mei</option>
         <option value='Juni'>Juni</option>
         <option value='Juli'>Juli</option>
         <option value='Augustus'>Augustus</option>
         <option value='September'>September</option>
       </select>
+      <input type="submit" name="action" value="zoek">
     </form>
+
   </section>
   <!-- <section>
     <h1>Events</h1>
@@ -63,6 +68,9 @@
   </section> -->
 
   <section class="events-result">
+    <?php if (!$events) {
+      echo "<p> Dat event kennen we niet. Probeer anders onze andere zoekfunctie's om het te vinden. </p>";
+    } ?>
     <?php foreach($events as $event): ?>
       <h1><?php echo $event['title']; ?></h1>
     <? endforeach;?>

@@ -9,6 +9,13 @@ class EventDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function selectAllTags() {
+    $sql = "SELECT * FROM `ma3_dok_tags`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function search($conditions = array()) {
     $sql = "SELECT DISTINCT
       ma3_dok_events.*,

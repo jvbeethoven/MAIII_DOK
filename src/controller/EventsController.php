@@ -13,8 +13,18 @@ class EventsController extends Controller {
 
   public function index() {
 
-    if( !isset( $_POST["query"]) ){
-      $events = $this->eventDAO->selectAllAfterToday();
+
+    $tags = $this->eventDAO->selectAllTags();
+    $this->set('tags', $tags);
+    $events = $this->eventDAO->selectAllAfterToday();
+
+    if($this->isAjax) {
+      header('Content-Type: application/json');
+      $this->_searchAjax();
+      exit();
+    }
+
+    if( !isset( $_POST ) ){
       $this->set('events', $events);
     } else {
       $this->_searchEventsIfNeeded();
@@ -27,18 +37,27 @@ class EventsController extends Controller {
     $conditions = array();
 
     // example: search on title
-    $conditions[0] = array(
-      'field' => 'title',
-      'comparator' => 'like',
-      'value' => $_POST["query"]
-    );
+    if( isset( $_POST["query"]) ){
+      $conditions[0] = array(
+        'field' => 'title',
+        'comparator' => 'like',
+        'value' => $_POST["query"]
+      );
+    }
 
-    // example: search on tag name
-    // $conditions[0] = array(
-    //   'field' => 'tag',
-    //   'comparator' => '=',
-    //   'value' => 'gastvrijheid'
-    // );
+    if( isset( $_POST["tag"]) ){
+      // example: search on tag name
+      $conditions[0] = array(
+        'field' => 'tag',
+        'comparator' => '=',
+        'value' => $_POST["tag"]
+      );
+    }
+
+    // if( isset( $_POST["month"]) ){
+    //   var_dump($_POST("month"));
+    // }
+
     //
     // // example: events happening on march first
     // $conditions[0] = array(
@@ -54,9 +73,28 @@ class EventsController extends Controller {
 
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
-
-
   }
 
+  public function _searchAjax() {
+      // var_dump($_POST);
+      $conditions = array();
+      if( isset( $_POST["query"]) ){
+        $conditions[0] = array(
+          'field' => 'title',
+          'comparator' => 'like',
+          'value' => $_POST["query"]
+        );
+      }
 
-}
+      if( isset( $_POST["tag"]) ){
+        // example: search on tag name
+        $conditions[0] = array(
+          'field' => 'tag',
+          'comparator' => '=',
+          'value' => $_POST["tag"]
+        );
+      }
+      $events = $this->eventDAO->search($conditions);
+      echo json_encode( $events );
+    }
+  }
