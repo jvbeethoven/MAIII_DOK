@@ -1,14 +1,14 @@
 <header class="header">
   <nav class="header-nav">
-    <img src="" alt="" class="header-nav-logo">
+    <a href="index.php" class="header-nav-logo"><span class="header-nav-logo-hidden">DOK</span></a>
     <div class="header-nav-items">
-      <a href="#" class="header-nav-item">Agenda</a>
-      <a href="#" class="header-nav-item">Praktisch</a>
-      <a href="#" class="header-nav-item">Over DOK</a>
+      <a href="index.php?page=event" class="header-nav-item">Agenda</a>
+      <a href="index.php?page=practical" class="header-nav-item">Praktisch</a>
+      <a href="index.php?page=about" class="header-nav-item">Over DOK</a>
     </div>
     <div class="header-nav-social">
-      <img src="" alt="" class="header-nav-social facebook">
-      <img src="" alt="" class="header-nav-social twitter">
+      <a href="#" class="header-nav-social-facebook"></a>
+      <a href="#" class="header-nav-social-twitter"></a>
     </div>
   </nav>
   <div class="header-container">
@@ -79,7 +79,7 @@
   </section>
 
   <section class="resident">
-    <blockquote cite="http://developer.mozilla.org">
+    <blockquote cite="#">
       <p>“Dok gaf me als resident de kans om m’n creatieve grenzen te verleggen en dit te delen met andere inspirerende individuen.”</p>
       <p>- Jan, DOKbewoner 2016</p>
     </blockquote>
@@ -91,8 +91,8 @@
       <h1 class="newsletter-text-title">Fan van DOK?</h1>
       <p class="newsletter-text-p">Laten we het officieel maken door je in te schrijven op de nieuwsbrief.</p>
     </article>
-    <form action="index.html" method="post" class="newsletter-subscribe-form">
-      <input type="email" name="email" class="newsletter-subscribe-input" placeholder="Email address" autofocus>
+    <form action="index.php" method="post" class="newsletter-subscribe-form">
+      <input type="email" name="email" class="newsletter-subscribe-input" placeholder="Email address">
       <button type="submit" class="newsletter-subscribe-submit">Subscribe</button>
     </form>
   </section>

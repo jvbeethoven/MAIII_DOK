@@ -6,6 +6,7 @@
   --light-pink: #ffa39c;
   --light-purple: #e2b6e8;
   --dark-purple: #525fe8;
+  --dark-pink: #ff7163;
   /*
   --box-shadow {
     box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, .2);
@@ -14,7 +15,7 @@
 
 body {
   font-family: Monaco, Consolas, 'Lucida Console', monospace;
-  color: white;
+  color: black;
   font-size: 3rem;
   display: flex;
   flex-direction: column;
@@ -30,15 +31,14 @@ main {
 }
 
 .header {
-  background-color: var(--light-green);
   color: var(--dark-purple);
   height: 55vw;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   &-nav {
     display: flex;
@@ -67,17 +67,52 @@ main {
       color: var(--light-pink);
       transition: color .3s ease-in-out;
     }
+
+    &-active { color: var(--light-pink); }
+  }
+}
+
+.header-events {
+
+  height: 30vw;
+  background-color: var(--light-green);
+
+  &-title {
+    color: var(--dark-pink);
+    width: 100vw;
+    height: 20vw;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &-h {
+      font-size: 3.3vw;
+      font-family: 'Arial Black';
+      position: absolute;
+      top: 40%;
+      left: 9%;
+    }
+
+    &-p {
+      font-size: 1.8rem;
+      position: absolute;
+      top: 66%;
+      left: 9%;
+    }
   }
 }
 
 .header-container {
-
+  background-color: var(--light-green);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 80vw;
+  width: 100vw;
   height: 50vw;
 
   &-title, &-date, &-place {
@@ -355,6 +390,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.events-search {
+  display: flex;
+
+  &-form-search { display: flex; }
 }
 
 @media only screen and (width <= 1300px) {
