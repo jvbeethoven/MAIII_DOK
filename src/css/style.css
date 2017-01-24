@@ -6,10 +6,10 @@
   --light-pink: #ffa39c;
   --light-purple: #e2b6e8;
   --dark-purple: #525fe8;
-
+  /*
   --box-shadow {
     box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, .2);
-  }
+  }*/
 }
 
 body {
@@ -187,7 +187,7 @@ main {
   &-article-news, &-article-dok, &-article-agenda {
     margin-bottom: 7rem;
 
-    @apply --box-shadow;
+    /*@apply --box-shadow;*/
   }
 }
 
