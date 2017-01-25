@@ -6,15 +6,16 @@
   --light-pink: #ffa39c;
   --light-purple: #e2b6e8;
   --dark-purple: #525fe8;
-  /*
+  --dark-pink: #ff7163;
+
   --box-shadow {
     box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, .2);
-  }*/
+  }
 }
 
 body {
   font-family: Monaco, Consolas, 'Lucida Console', monospace;
-  color: white;
+  color: black;
   font-size: 3rem;
   display: flex;
   flex-direction: column;
@@ -30,15 +31,14 @@ main {
 }
 
 .header {
-  background-color: var(--light-green);
   color: var(--dark-purple);
   height: 55vw;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   &-nav {
     display: flex;
@@ -53,13 +53,32 @@ main {
 
     background-color: white;
     box-shadow: 0 .5rem 1.2rem 0 rgba(150, 250, 240, .95);
+
+    &-items { display: flex; }
+  }
+
+  &-nav-logo {
+    width: 7vw;
+    height: 3vw;
+    background: url(../assets/svg/dok_logo.svg) no-repeat;
+    background-size: 100%;
+    transition: .2s ease-in-out;
+
+    &-hidden {
+      visibility: hidden;
+    }
+
+    &:hover {
+      background: url(../assets/svg/dok_logo_hover.svg) no-repeat;
+      background-size: 100%;
+      transition: .2s ease-in-out;
+    }
   }
 
   &-nav-item {
 
     text-decoration: none;
     margin-right: 7vw;
-    padding-bottom: 1rem;
     color: var(--dark-purple);
     transition: color .3s ease-in-out;
 
@@ -67,17 +86,60 @@ main {
       color: var(--light-pink);
       transition: color .3s ease-in-out;
     }
+
+    &-active { color: var(--light-pink); }
+  }
+
+  &-nav-social-facebook-svg, &-nav-social-twitter-svg {
+    width: 5rem;
+    height: 4rem;
+
+    &:hover { fill: var(--light-pink); }
+  }
+
+}
+
+.header-events {
+
+  height: 30vw;
+  background-color: var(--light-green);
+
+  &-title {
+    color: var(--dark-pink);
+    width: 100vw;
+    height: 20vw;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &-h {
+      font-size: 3.3vw;
+      font-family: 'Arial Black';
+      position: absolute;
+      top: 40%;
+      left: 9%;
+    }
+
+    &-p {
+      font-size: 1.8rem;
+      position: absolute;
+      top: 66%;
+      left: 9%;
+    }
   }
 }
 
 .header-container {
-
+  background-color: var(--light-green);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 80vw;
+  width: 100vw;
   height: 50vw;
 
   &-title, &-date, &-place {
@@ -357,35 +419,30 @@ main {
   align-items: center;
 }
 
-@media only screen and (width <= 1300px) {
+.events-search {
+  display: flex;
 
-  .general {
-    width: 85vw;
-
-    &-article-news {
-      width: 40rem;
-      height: 55rem;
-
-      &-img { height: 45rem; }
-
-      &-three { width: 100%; }
-    }
-
-    &-article-news-title-three { height: 10rem; }
-
-    &-article-dok {
-      width: 50vw;
-      padding: 2rem 3rem;
-      height: 55rem;
-    }
-
-    &-article-agenda {
-      height: 55rem;
-    }
-  }
+  &-form-search { display: flex; }
 }
 
 @media only screen and (width <= 1160px) {
+
+  .header {
+
+    &-nav {
+      font-size: 2.5vw;
+
+      &-logo {
+        width: 10vw;
+        height: 4vw;
+      }
+    }
+
+    &-nav-social-facebook-svg, &-nav-social-twitter-svg {
+      width: 3rem;
+      height: 4rem;
+    }
+  }
 
   .general {
 
@@ -411,7 +468,70 @@ main {
 
 @media only screen and (width <= 590px) {
 
-  body { min-width: 32rem; }
+  .header-nav {
+
+    font-size: 1.4rem;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    height: 10vh;
+    position: relative;
+
+    &-social-facebook-svg, &-social-twitter-svg {
+      display: none;
+    }
+
+    &-logo {
+      width: 14vw;
+      height: 6vw;
+      margin: 0 2.rem .5rem;
+    }
+
+    &-item {
+      margin-right: 8vw;
+      /*display: flex;
+      flex-direction: column;
+      align-items: center;*/
+    }
+
+    &-item-agenda {
+
+      &::before {
+        background: url(../assets/svg/calendar.svg) no-repeat;
+        background-size: 100%;
+        content: '';
+        display: block;
+        width: 7vw;
+        height: 7vw;
+        margin: .5rem 1rem;
+      }
+    }
+
+    &-item-practical {
+
+      &::before {
+        background: url(../assets/svg/practical.svg) no-repeat;
+        background-size: 100%;
+        content: '';
+        display: block;
+        width: 7vw;
+        height: 7vw;
+        margin: .5rem 1.5rem;
+      }
+    }
+
+    &-item-about {
+
+      &::before {
+        background: url(../assets/svg/about.svg) no-repeat;
+        background-size: 100%;
+        content: '';
+        display: block;
+        width: 7vw;
+        height: 7vw;
+        margin: .5rem 1.5rem;
+      }
+    }
+  }
 
   .general {
 

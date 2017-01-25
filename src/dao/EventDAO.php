@@ -2,6 +2,20 @@
 require_once __DIR__ . '/DAO.php';
 class EventDAO extends DAO {
 
+  public function selectAllAfterToday() {
+    $sql = "SELECT * FROM `ma3_dok_events` WHERE `start` >= CURRENT_TIMESTAMP";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function selectAllTags() {
+    $sql = "SELECT * FROM `ma3_dok_tags`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function search($conditions = array()) {
     $sql = "SELECT DISTINCT
       ma3_dok_events.*,
