@@ -13,22 +13,18 @@ class EventsController extends Controller {
 
   public function index() {
 
-
     $tags = $this->eventDAO->selectAllTags();
     $this->set('tags', $tags);
-    $events = $this->eventDAO->selectAllAfterToday();
+
+    $events = $this->_searchEventsIfNeeded();
 
     if($this->isAjax) {
       header('Content-Type: application/json');
-      $this->_searchAjax();
+      echo json_encode( $events );
       exit();
     }
 
-    if( !isset( $_POST ) ){
-      $this->set('events', $events);
-    } else {
-      $this->_searchEventsIfNeeded();
-    }
+    $this->set('events', $events);
 
 
   }
@@ -37,20 +33,20 @@ class EventsController extends Controller {
     $conditions = array();
 
     // example: search on title
-    if( isset( $_POST["query"]) ){
+    if( isset( $_GET["query"]) ){
       $conditions[0] = array(
         'field' => 'title',
         'comparator' => 'like',
-        'value' => $_POST["query"]
+        'value' => $_GET["query"]
       );
     }
 
-    if( isset( $_POST["tag"]) ){
+    if( isset( $_GET["tag"]) ){
       // example: search on tag name
       $conditions[0] = array(
         'field' => 'tag',
         'comparator' => '=',
-        'value' => $_POST["tag"]
+        'value' => $_GET["tag"]
       );
     }
 
@@ -72,29 +68,6 @@ class EventsController extends Controller {
     // );
 
     $events = $this->eventDAO->search($conditions);
-    $this->set('events', $events);
+    return $events;
   }
-
-  public function _searchAjax() {
-      // var_dump($_POST);
-      $conditions = array();
-      if( isset( $_POST["query"]) ){
-        $conditions[0] = array(
-          'field' => 'title',
-          'comparator' => 'like',
-          'value' => $_POST["query"]
-        );
-      }
-
-      if( isset( $_POST["tag"]) ){
-        // example: search on tag name
-        $conditions[0] = array(
-          'field' => 'tag',
-          'comparator' => '=',
-          'value' => $_POST["tag"]
-        );
-      }
-      $events = $this->eventDAO->search($conditions);
-      echo json_encode( $events );
-    }
-  }
+}

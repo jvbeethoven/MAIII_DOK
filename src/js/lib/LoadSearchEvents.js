@@ -47,5 +47,29 @@ const validateSearch = searchValue => {
 const parse = result => {
 
   console.log(result[0]);
+  resultList.innerHTML = ``;
 
+  if (result.length > 0) {
+
+    result.forEach(event => {
+
+      const listItemElement = createListElement(`${event.title}`);
+      resultList.appendChild(listItemElement);
+
+    });
+
+  } else {
+
+    const listItemElement = createListElement(`Er zijn geen gebruikers met deze naam`);
+    resultList.appendChild(listItemElement);
+
+  }
+
+};
+
+const createListElement = text => {
+  const listItemElement = document.createElement(`li`);
+  listItemElement.innerHTML = text;
+
+  return listItemElement;
 };

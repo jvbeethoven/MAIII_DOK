@@ -20,13 +20,13 @@
 <main>
   <section class="events-search">
 
-    <form class="events-search-form-search" action="index.php?page=event" method="post">
+    <form class="events-search-form-search" action="index.php?page=event" method="get">
       <input type="text" class="events-search-form-input" name="query" placeholder="Zoeken" value="" autocomplete="off"><br/>
       <!-- <input type="hidden" name="page" value="event"> -->
       <input type="submit" name="action" value="Zoek" class="events-search-form-submit">
     </form>
 
-    <form class="events-search-form-tag" action="index.php?page=event" method="post">
+    <form class="events-search-form-tag" action="index.php?page=event" method="get">
       <select class="events-search-form-tag-select" name="tag">
         <option value='' disabled selected>Soort evenement</option>
         <?php foreach($tags as $tag): ?>
@@ -36,7 +36,7 @@
       <input type="submit" name="action" value="zoek">
     </form>
 
-    <form class="events-search-form-month" action="index.php?page=event" method="post">
+    <form class="events-search-form-month" action="index.php?page=event" method="get">
       <select class="events-search-form-month-select" name="month">
         <option value='' disabled selected>Wanneer</option>
         <option value="Mei" data-start="2017-05-01 00:00:00" data-end="2017-05-31 23:59:59">Mei</option>
