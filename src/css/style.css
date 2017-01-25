@@ -55,6 +55,24 @@ main {
     box-shadow: 0 .5rem 1.2rem 0 rgba(150, 250, 240, .95);
   }
 
+  &-nav-logo {
+    width: 7vw;
+    height: 3vw;
+    background: url(../assets/svg/dok_logo.svg) no-repeat;
+    background-size: 100%;
+    transition: all .2s ease-in-out;
+
+    &-hidden {
+      visibility: hidden;
+    }
+
+    &:hover {
+      background: url(../assets/svg/dok_logo_hover.svg) no-repeat;
+      background-size: 100%;
+      transition: all .2s ease-in-out;
+    }
+  }
+
   &-nav-item {
 
     text-decoration: none;
