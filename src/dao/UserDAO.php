@@ -9,4 +9,11 @@ class UserDAO extends DAO {
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
+
+  public function selectUpcoming() {
+    $sql = "SELECT * FROM `ma3_dok_events` WHERE `start` >= CURRENT_TIMESTAMP limit 3";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 }
