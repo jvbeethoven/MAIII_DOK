@@ -13,7 +13,8 @@ export default ({input, result, submit} = {}) => {
 };
 
 const inputHandler = e => {
-  e.preventDefault();
+  // e.preventDefault();
+  console.log(e);
 
   const searchValue = inputField.value;
 
@@ -46,30 +47,14 @@ const validateSearch = searchValue => {
 
 const parse = result => {
 
-  console.log(result[0]);
-  resultList.innerHTML = ``;
-
-  if (result.length > 0) {
-
-    result.forEach(event => {
-
-      const listItemElement = createListElement(`${event.title}`);
-      resultList.appendChild(listItemElement);
-
-    });
-
-  } else {
-
-    const listItemElement = createListElement(`Er zijn geen gebruikers met deze naam`);
-    resultList.appendChild(listItemElement);
-
+  if (!result || result.length === 0) {
+    resultList.innerHTML = `<p>Geen event gevonden</p>`;
+    return;
   }
-
-};
-
-const createListElement = text => {
-  const listItemElement = document.createElement(`li`);
-  listItemElement.innerHTML = text;
-
-  return listItemElement;
+  let resultHTML = `<ol>`;
+  result.forEach(result => {
+    resultHTML += `<li><a href="index.php?page=result-detail&amp;id=${result.id}">${result.title}</a></li>`;
+  });
+  resultHTML += `</ol>`;
+  resultList.innerHTML = resultHTML;
 };

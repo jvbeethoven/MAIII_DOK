@@ -22,17 +22,18 @@
 
     <form class="events-search-form-search" action="index.php?page=event" method="get">
       <input type="text" class="events-search-form-input" name="query" placeholder="Zoeken" value="" autocomplete="off"><br/>
-      <!-- <input type="hidden" name="page" value="event"> -->
+      <input type="hidden" name="page" value="event">
       <input type="submit" name="action" value="Zoek" class="events-search-form-submit">
     </form>
 
-    <form class="events-search-form-tag" action="index.php?page=event" method="get">
+    <form class="events-search-form-tag" action="index.php" method="get">
       <select class="events-search-form-tag-select" name="tag">
         <option value='' disabled selected>Soort evenement</option>
         <?php foreach($tags as $tag): ?>
         <option value='<?php echo $tag['tag'];?>'><?php echo $tag['tag'];?></option>
         <? endforeach;?>
       </select>
+      <input type="hidden" name="page" value="event">
       <input type="submit" name="action" value="zoek">
     </form>
 
