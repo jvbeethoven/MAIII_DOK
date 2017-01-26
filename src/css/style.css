@@ -46,13 +46,15 @@ main {
     align-items: center;
     width: 100vw;
     height: 8vh;
+    position: fixed;
+    z-index: 1000;
 
     font-family: arial;
     font-weight: bold;
     font-size: 1.8vw;
 
     background-color: white;
-    box-shadow: 0 .5rem 1.2rem 0 rgba(150, 250, 240, .95);
+    @apply --box-shadow;
 
     &-items { display: flex; }
   }
@@ -101,13 +103,13 @@ main {
 
 .header-events {
 
-  height: 30vw;
-  background-color: var(--light-green);
+  height: 25vw;
 
   &-title {
     color: var(--dark-pink);
+    background-color: var(--light-green);
     width: 100vw;
-    height: 20vw;
+    height: 25vw;
     position: relative;
 
     display: flex;
@@ -125,8 +127,9 @@ main {
 
     &-p {
       font-size: 1.8rem;
+      max-width: 40vw;
       position: absolute;
-      top: 66%;
+      top: 60%;
       left: 9%;
     }
   }
@@ -290,18 +293,6 @@ main {
     height: 37rem;
     width: 100%;
     object-fit: cover;
-
-    &::after {
-      background: url(../assets/svg/border.svg) no-repeat;
-      background-size: 100%;
-      content: '';
-      display: block;
-      width: 100%;
-      height: 20rem;
-      /*position: relative;
-      top: -60%;*/
-      align-self: center;
-    }
   }
 
   &-one {
@@ -479,6 +470,12 @@ main {
 
 .events-search {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background-color: var(--light-pink);
+  width: 100%;
+  height: 10vw;
 
   &-form-search { display: flex; }
 }
@@ -495,6 +492,17 @@ main {
         height: 4vw;
       }
     }
+
+    &-events { height: 17rem; }
+
+    &-events-title { height: 30vw; }
+
+    &-events-title-h {
+      font-size: 3.5rem;
+      top: 60%;
+    }
+
+    &-events-title-p { display: none; }
 
     &-nav-social-facebook-svg, &-nav-social-twitter-svg {
       width: 3rem;
@@ -553,14 +561,20 @@ main {
 
 @media only screen and (width <= 590px) {
 
+  .header {
+
+    &-events { height: 13vw; }
+    &-events-title { display: none; }
+
+  }
+
   .header-nav {
 
     font-size: 1.4rem;
     align-items: flex-end;
     padding-bottom: 1rem;
-    height: 10vh;
-    position: relative;
-    width: 100%;
+    height: 8vh;
+    position: fixed;
 
     &-social-facebook-svg, &-social-twitter-svg {
       display: none;
