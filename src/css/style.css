@@ -247,7 +247,7 @@ main {
   width: 75vw;
 
   &-article-news, &-article-dok, &-article-agenda {
-    margin-bottom: 7rem;
+    margin-bottom: 6vw;
 
     @apply --box-shadow;
   }
@@ -255,19 +255,26 @@ main {
 
 .general-article-news {
 
-  width: 40rem;
   height: 46rem;
+  width: 40rem;
+  position: relative;
+
+  &-link {
+    text-decoration: none;
+    color: white;
+  }
 
   &-title {
-    height: 10rem;
+    /*height: 10rem;*/
     background-color: var(--light-pink);
-    padding: 2rem 4rem;
+    padding: 3rem 4rem;
     font-size: 1.8rem;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
+    position: relative;
   }
 
   &-tag {
@@ -280,7 +287,21 @@ main {
   &-title-three { height: 12rem; }
 
   &-img {
-    height: 36rem;
+    height: 37rem;
+    width: 100%;
+    object-fit: cover;
+
+    &::after {
+      background: url(../assets/svg/border.svg) no-repeat;
+      background-size: 100%;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 20rem;
+      /*position: relative;
+      top: -60%;*/
+      align-self: center;
+    }
   }
 
   &-one {
@@ -296,7 +317,11 @@ main {
     width: 75vw;
     height: 67rem;
 
-    &-img { height: 55rem; }
+    &-img {
+      height: 55rem;
+      filter: blur(.1rem);
+      overflow: hidden;
+    }
   }
 
 }
@@ -306,7 +331,7 @@ main {
   background-color: var(--dark-purple);
 
   width: 40vw;
-  height: 46rem;
+  height: 47rem;
   padding: 2rem 6rem;
   order: 2;
   font-size: 1.8rem;
@@ -334,11 +359,12 @@ main {
       width: 2rem;
       height: 2.4rem;
       position: absolute;
+      margin: 2rem 0;
       left: 50%;
-      top: 140%;
+      /*top: 140%;*/
     }
 
-    &::before { top: -90%; }
+    &::before { top: -140%; }
   }
 }
 
@@ -347,7 +373,7 @@ main {
   background-color: var(--dark-purple);
 
   width: 39vw;
-  height: 46rem;
+  height: 47rem;
   font-size: 2rem;
   padding: 2rem 4vw;
 
@@ -487,7 +513,25 @@ main {
 
       &-one { order: 2; }
 
+      &-three { height: 46rem; }
+
+      &-three-img {
+        height: 36rem;
+      }
+
       &-event { width: 60vw; }
+    }
+
+    &-article-news-title::after {
+      background: url(../assets/svg/arrow.svg) no-repeat;
+      background-size: 100%;
+      content: '';
+      display: block;
+      width: 5rem;
+      height: 7rem;
+      position: absolute;
+      right: 6%;
+      bottom: -40%;
     }
 
     &-article-dok {
@@ -516,6 +560,7 @@ main {
     padding-bottom: 1rem;
     height: 10vh;
     position: relative;
+    width: 100%;
 
     &-social-facebook-svg, &-social-twitter-svg {
       display: none;
@@ -524,7 +569,7 @@ main {
     &-logo {
       width: 14vw;
       height: 6vw;
-      margin: 0 3rem 1rem;
+      margin: 0 1.3rem 1rem;
     }
 
     &-item {
@@ -535,6 +580,7 @@ main {
     }
 
     &-item-agenda {
+      margin-right: 3vw;
 
       &::before {
         background: url(../assets/svg/calendar.svg) no-repeat;
@@ -548,6 +594,7 @@ main {
     }
 
     &-item-practical {
+      margin-right: 3vw;
 
       &::before {
         background: url(../assets/svg/practical.svg) no-repeat;
@@ -576,16 +623,22 @@ main {
 
   .general {
 
-    width: 90vw;
+    width: 95vw;
 
     &-article-news {
-      height: 10vw;
+      height: 13vw;
+      margin-bottom: 8rem;
 
       &-img { display: none; }
+
+      &-title { height: 11rem; }
+
     }
 
     &-article-dok { display: none; }
   }
+
+  .general-article-agenda { margin-bottom: 1.8rem; }
 
   .general-article-agenda-event {
     width: 72vw;
