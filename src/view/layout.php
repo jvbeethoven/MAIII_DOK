@@ -13,6 +13,29 @@
 
       <?php echo $content; ?>
     </div>
+    <section class="newsletter">
+      <article class="newsletter-text">
+        <h1 class="newsletter-text-title">Fan van DOK?</h1>
+        <p class="newsletter-text-p">Laten we het officieel maken door je in te schrijven op de nieuwsbrief.</p>
+      </article>
+      <form action="index.php" method="post" class="newsletter-subscribe-form">
+        <input type="email" name="email" class="newsletter-subscribe-input" placeholder="Email address">
+        <button type="submit" class="newsletter-subscribe-submit">Subscribe</button>
+      </form>
+    </section>
+    <section class="sponsors">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+      <img src="#" alt="">
+    </section>
 
     <?php echo $js;?>
   </body>
