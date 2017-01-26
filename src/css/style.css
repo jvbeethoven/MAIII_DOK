@@ -30,6 +30,11 @@ main {
   align-items: center;
 }
 
+select {
+  appearance: none;
+  border-radius: 0;
+}
+
 .header {
   color: var(--dark-purple);
   height: 55vw;
@@ -44,9 +49,11 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
 
     font-family: arial;
@@ -54,6 +61,7 @@ main {
     font-size: 1.8vw;
 
     background-color: white;
+
     @apply --box-shadow;
 
     &-items { display: flex; }
@@ -92,11 +100,23 @@ main {
     &-active { color: var(--light-pink); }
   }
 
-  &-nav-social-facebook-svg, &-nav-social-twitter-svg {
-    width: 5rem;
-    height: 4rem;
+  &-nav-social {
+    min-width: 15rem;
+    min-height: 4rem;
+  }
 
-    &:hover { fill: var(--light-pink); }
+  &-nav-social-facebook {
+    background: url(../assets/svg/fb.svg) no-repeat;
+    background-size: 100%;
+    width: 7vw;
+    height: 3vw;
+  }
+
+  &-nav-social-twitter {
+    background: url(../assets/svg/twitter.svg) no-repeat;
+    background-size: 100%;
+    width: 7vw;
+    height: 3vw;
   }
 
 }
@@ -262,23 +282,30 @@ main {
   height: 46rem;
   width: 40rem;
   position: relative;
+  background-color: var(--light-pink);
 
   &-link {
     text-decoration: none;
     color: white;
+
+    &:hover > .general-article-news-title {
+      transform: translateY(-5rem);
+    }
   }
 
   &-title {
     /*height: 10rem;*/
-    background-color: var(--light-pink);
-    padding: 3rem 4rem;
+
+    padding: 3rem 4rem 0;
     font-size: 1.8rem;
+    background-color: var(--light-pink);
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
     position: relative;
+    transition: transform .4s;
   }
 
   &-tag {
@@ -472,6 +499,7 @@ main {
 .events-search {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 
   background-color: var(--light-pink);
@@ -479,7 +507,33 @@ main {
   height: 10vw;
   margin-bottom: 5rem;
 
-  &-form-search { display: flex; }
+  &-form-input, &-form-tag-select, &-form-month-select {
+    border: .3rem solid white;
+    padding: 1rem;
+    color: white;
+    font-size: 1.6rem;
+    height: 4.5rem;
+    width: 30rem;
+
+    &::placeholder {
+      color: white;
+      font-style: italic;
+    }
+  }
+
+  &-form-input {
+    background: url(../assets/svg/search.svg) 98% 0 no-repeat var(--light-pink);
+  }
+
+  &-form-tag-select {
+    background: url(../assets/svg/tag.svg) 2% 0 no-repeat var(--light-pink);
+    padding: 1rem 0 0 5rem;
+  }
+
+  &-form-month-select {
+    background: url(../assets/svg/tag.svg) 2% 0 no-repeat var(--light-pink);
+    padding: 1rem 0 0 5rem;
+  }
 }
 
 .events-result {
@@ -495,10 +549,14 @@ main {
     width: 35vw;
     height: 40rem;
     margin-bottom: -3vw;
+    overflow: hidden;
+    background-color: var(--light-green);
+
+    @apply --box-shadow;
 
     &-img {
       width: 100%;
-      height: 28rem;
+      height: 30rem;
       object-fit: cover;
     }
 
@@ -506,11 +564,30 @@ main {
       margin-top: 10vw;
     }
 
-    /*&:nth-child(odd) {
-      margin-top: -12vw;
-    }*/
+    &-link {
 
-    &-link { text-decoration: none; }
+      text-decoration: none;
+
+      &:hover > .events-result-item-info {
+        transform: translateY(-5rem);
+      }
+
+      &:hover > .events-result-item-info::after {
+        background: url(../assets/svg/arrow.svg) no-repeat;
+        background-size: 7%;
+        background-position: 40% 0;
+        content: 'Ontdek het hier';
+        display: block;
+        width: 100%;
+        height: 3rem;
+        font-size: 1.8rem;
+        color: white;
+        position: absolute;
+        left: 6%;
+        top: 100%;
+      }
+    }
+
   }
 
   &-item-info {
@@ -523,6 +600,7 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    transition: transform .4s;
 
     &-title {
       font-size: 1.8rem;
@@ -530,6 +608,8 @@ main {
       font-family: arial;
       font-weight: bold;
     }
+
+    &::after { transition: all .4s; }
   }
 
   &-item-info-details {
@@ -695,6 +775,8 @@ main {
         margin: .5rem 1.5rem;
       }
     }
+
+    &-social { display: none; }
   }
 
   .general {
