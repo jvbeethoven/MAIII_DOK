@@ -42,7 +42,7 @@
          alt="blog-image">
         <div class="general-article-news-title general-article-news-title-one ">
           <h1 class="general-article-news-tag">#nieuws</h1>
-          <h2 class="general-article-new-title-item">DOK gaat door in 2017-2018!</h2>
+          <h2 class="general-article-news-title-item">DOK gaat door in 2017-2018!</h2>
         </div>
       </a>
     </article>
@@ -59,7 +59,7 @@
          alt="blog-image">
         <div class="general-article-news-title general-article-news-title-two">
           <h1 class="general-article-news-tag">#nieuws</h1>
-          <h2 class="general-article-new-title-item">DOKbewoners &amp; DOKwerkers.</h2>
+          <h2 class="general-article-news-title-item">DOKbewoners &amp; DOKwerkers.</h2>
         </div>
       </a>
     </article>
@@ -76,7 +76,7 @@
          alt="blog-image">
         <div class="general-article-news-title general-article-news-title-three">
           <h1 class="general-article-news-tag">#nieuws</h1>
-          <h2 class="general-article-new-title-item">Een blik op DOK2016</h2>
+          <h2 class="general-article-news-title-item">Een blik op DOK2016</h2>
         </div>
       </a>
     </article>
