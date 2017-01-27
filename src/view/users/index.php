@@ -108,11 +108,11 @@
   </section>
 
   <section class="resident">
-    <blockquote cite="#">
-      <p>“Dok gaf me als resident de kans om m’n creatieve grenzen te verleggen en dit te delen met andere inspirerende individuen.”</p>
-      <p>- Jan, DOKbewoner 2016</p>
+    <blockquote cite="#" class="resident-quote">
+      <p class="resident-quote-text">“Dok gaf me als resident de kans om m’n creatieve grenzen te verleggen en dit te delen met andere inspirerende individuen.”</p>
+      <p class="resident-quote-person">- Jan, DOKbewoner 2016</p>
     </blockquote>
-    <a href="#">Word zelf resident</a>
+    <a href="#" class="resident-quote-button">Word zelf resident</a>
   </section>
   <section class="map"></section>
 </main>
