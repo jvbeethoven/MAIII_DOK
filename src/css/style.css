@@ -794,18 +794,26 @@ select {
   height: 10rem;
   background-color: var(--light-green);
   color: var(--dark-purple);
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 15rem;
   font-size: 1.8rem;
   position: relative;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 80vw;
+  }
 
   &-organiser, &-place, &-time, &-tag {
     position: relative;
     padding: 1rem 4rem;
+    min-width: 12rem;
 
     &::before {
       content: '';
@@ -818,29 +826,29 @@ select {
 
   &-organiser::before {
     background: url(../assets/svg/organiser.svg) no-repeat;
-    background-size: 60%;
-    right: 80%;
+    background-size: 50%;
+    left: -5%;
     top: -20%;
   }
 
   &-place::before {
     background: url(../assets/svg/location.svg) no-repeat;
-    background-size: 60%;
-    right: 80%;
+    background-size: 50%;
+    left: -5%;
     top: -20%;
   }
 
   &-time::before {
     background: url(../assets/svg/time.svg) no-repeat;
-    background-size: 70%;
-    right: 85%;
+    background-size: 60%;
+    left: -5%;
     top: 10%;
   }
 
   &-tag::before {
     background: url(../assets/svg/tag-purple.svg) no-repeat;
-    background-size: 70%;
-    right: 60%;
+    background-size: 60%;
+    left: -5%;
     top: -10%;
   }
 }
@@ -849,6 +857,7 @@ select {
   width: 75vw;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .event-detail-info {
@@ -861,7 +870,8 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5rem 0;
+  margin: 5rem 0 0;
+  order: 1;
 
   font-family: helvetica, arial, sans-serif;
 
@@ -884,9 +894,9 @@ select {
 .event-detail-buttons {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   margin: 2rem 0;
-  width: 30rem;
+  min-width: 20rem;
+  order: 2;
   font-size: 2rem;
 
   &-title {
@@ -1001,11 +1011,18 @@ select {
     }
   }
 
+  .event-detail-icons {
+
+    height: 15rem;
+
+    &-organiser, &-place, &-time, &-tag {
+      min-width: 33rem;
+    }
+  }
+
   .event-detail-buttons { align-items: flex-end; }
 
-  .event-detail-information { width: 90vw; }
-
-  .newsletter { width: 90vw; }
+  .event-detail-information, .newsletter, .sponsors { width: 90vw; }
 }
 
 @media only screen and (width <= 987px) {
@@ -1022,6 +1039,20 @@ select {
     }
 
     &-item-info { width: 100%; }
+  }
+
+  .event-detail-icons {
+
+    height: 22rem;
+
+    &-container {
+      width: 90vw;
+      justify-content: center;
+    }
+
+    /*&-organiser, &-place, &-time, &-tag {
+      min-width: 27rem;
+    }*/
   }
 
 }

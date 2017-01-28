@@ -1,6 +1,8 @@
 import handleMouseMoveDocument from './lib/HandleMouseMoveDocument';
 import loadSearchEvents from './lib/LoadSearchEvents';
 import scrollEvent from './lib/ScrollEvent';
+import pageTransition from './lib/PageTransition';
+
 
 const init = () => {
   console.log(`hello`);
@@ -23,6 +25,10 @@ const init = () => {
 
   if (homeItems) {
     scrollEvent({element: homeItems});
+  }
+
+  if (navigator.userAgent.toLowerCase().indexOf(`chrome`) > - 1) {
+    pageTransition();
   }
 
 };

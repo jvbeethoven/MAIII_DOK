@@ -7,11 +7,13 @@
   </head>
   <body>
 
-    <div class="container">
-      <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
-      <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
+    <div class="container-fade">
+      <div class="container">
+        <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
+        <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
 
-      <?php echo $content; ?>
+        <?php echo $content; ?>
+      </div>
     </div>
     <section class="newsletter">
       <article class="newsletter-text">
@@ -36,6 +38,7 @@
       <img src="#" alt="">
       <img src="#" alt="">
     </section>
+  </main>
 
     <?php echo $js;?>
   </body>

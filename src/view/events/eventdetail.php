@@ -41,21 +41,23 @@
 
   <section class="event-detail-icons">
     <!-- <p><?php var_dump($event);?></p> -->
-    <?php if($event['organiser_id']): ?>
-      <p class="event-detail-icons-organiser"> Organisator <?php echo $event['organiser_id'];?></p>
-    <?php endif ?>
+    <div class="event-detail-icons-container">
+      <?php if($event['organiser_id']): ?>
+        <p class="event-detail-icons-organiser"> Organisator <?php echo $event['organiser_id'];?></p>
+      <?php endif ?>
 
-    <?php if($event['name']): ?>
-    <p class="event-detail-icons-place"><?php echo $event['name'];?></p>
-    <?php endif ?>
+      <?php if($event['name']): ?>
+      <p class="event-detail-icons-place"><?php echo $event['name'];?></p>
+      <?php endif ?>
 
-    <?php if($event['start']): ?>
-    <p class="event-detail-icons-time"><?php echo $event['start'];?></p>
-    <?php endif ?>
+      <?php if($event['start']): ?>
+      <p class="event-detail-icons-time"><?php echo $event['start'];?></p>
+      <?php endif ?>
 
-    <?php if($event['tag']): ?>
-      <p class="event-detail-icons-tag"><?php echo $event['tag'];?></p>
-    <?php endif ?>
+      <?php if($event['tag']): ?>
+        <p class="event-detail-icons-tag"><?php echo $event['tag'];?></p>
+      <?php endif ?>
+    </div>
   </section>
 
   <section class="event-detail-information">
