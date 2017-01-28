@@ -27,6 +27,7 @@ class EventDAO extends DAO {
       LEFT OUTER JOIN `ma3_dok_events_tags` ON ma3_dok_events.id = ma3_dok_events_tags.event_id
       LEFT OUTER JOIN `ma3_dok_tags` ON ma3_dok_tags.id = ma3_dok_events_tags.tag_id
       WHERE 1
+      -- ORDER BY start ASC
     ";
     $conditionSqls = array();
     $conditionParams = array();

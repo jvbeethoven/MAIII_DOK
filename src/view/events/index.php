@@ -2,7 +2,7 @@
   <nav class="header-nav">
     <a href="index.php" class="header-nav-logo"><span class="header-nav-logo-hidden">DOK</span></a>
     <div class="header-nav-items">
-      <a href="index.php?page=event" class="header-nav-item header-nav-item-agenda">Agenda</a>
+      <a href="index.php?page=event" class="header-nav-item header-nav-item-selected header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
       <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over DOK</a>
     </div>
@@ -56,13 +56,8 @@
       <article>
         <header><h2><?php echo $event['title']; ?></h2></header>
         <dl>
-          <dt>start</dt><dd><?php echo $event['start'];?></dd>
-          <dt>end</dt><dd><?php echo $event['end'];?></dd>
-          <dt>organiser</dt><dd><?php echo $event['organiser'];?></dd>
           <dt>title</dt><dd><?php echo $event['title'];?></dd>
           <dt>locations</dt><dd><ul><?php foreach($event['locations'] as $location): ?><li><?php echo $location['name'];?></li><?php endforeach;?></ul></dd>
-          <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
-          <dt>description</dt><dd><pre><?php echo $event['description'];?></pre></dd>
         </dl>
       </article>
     <? endforeach;?>
@@ -89,10 +84,10 @@
                 <p class="events-result-item-info-details-date">
                   <?php
                   $dt = new DateTime($event['start']);
-                  $date = $dt->format('m/d/Y');
+                  $date = $dt->format('d/m/Y');
                   echo $date;
                   ?></p>
-                <p class="events-result-item-info-details-place">Plaats</p>
+                <p class="events-result-item-info-details-place"><?php foreach($event['locations'] as $location): ?><?php echo $location['name'];?><?php endforeach;?></p>
               </div>
             </div>
           </a>

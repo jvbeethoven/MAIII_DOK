@@ -1,5 +1,6 @@
 import handleMouseMoveDocument from './lib/HandleMouseMoveDocument';
 import loadSearchEvents from './lib/LoadSearchEvents';
+import scrollEvent from './lib/ScrollEvent';
 
 const init = () => {
   console.log(`hello`);
@@ -15,6 +16,13 @@ const init = () => {
 
   if (searchInputField && resultList && submitButton) {
     loadSearchEvents({input: searchInputField, result: resultList, submit: submitButton});
+  }
+
+
+  const homeItems = document.querySelector(`.general`);
+
+  if (homeItems) {
+    scrollEvent({element: homeItems});
   }
 
 };
