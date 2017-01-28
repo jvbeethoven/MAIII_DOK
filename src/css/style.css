@@ -157,6 +157,23 @@ select {
   }
 }
 
+.header-events-detail {
+  height: 17rem;
+
+  &-breadcrumb {
+    background-color: var(--light-green);
+    color: var(--light-pink);
+    font-size: 2rem;
+    height: 17rem;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12rem 10rem;
+  }
+}
+
 .header-container {
   background-color: var(--light-green);
   position: relative;
@@ -607,17 +624,6 @@ select {
     background: url(../assets/svg/tag.svg) 5% 50% no-repeat var(--light-pink);
     background-size: 8%;
     padding: 1rem 0 1rem 5rem;
-/*
-    &::after {
-      width: 4.5rem;
-      height: 4.5rem;
-      content: 'test';
-      background: url(../assets/svg/form-arrow.svg);
-      position: absolute;
-      left: 10%;
-      display: block;
-      background-color: black;
-    }*/
   }
 
   &-form-month-select {
@@ -716,6 +722,46 @@ select {
   }
 }
 
+.event-detail-header {
+  width: 100vw;
+  background-color: var(--light-pink);
+  min-height: 38rem;
+  max-height: 45rem;
+
+  display: flex;
+  justify-content: center;
+
+  &-artist {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 75vw;
+  }
+
+  &-artist-img {
+    width: 100%;
+    max-width: 65rem;
+    min-width: 40rem;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.event-detail-icons {
+  width: 100vw;
+  height: 10rem;
+  background-color: var(--light-green);
+  color: var(--dark-purple);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15rem;
+  font-size: 1.8rem;
+}
+
 @media only screen and (width <= 1160px) {
 
   .header {
@@ -796,7 +842,6 @@ select {
 @media only screen and (width <= 987px) {
 
   .events-result {
-    width: 85vw;
 
     &-item {
       width: 100%;
