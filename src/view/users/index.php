@@ -4,7 +4,16 @@
     <div class="header-nav-items">
       <a href="index.php?page=event" class="header-nav-item header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
-      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over DOK</a>
+      <div class="header-nav-dropdown">
+        <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over DOK</a>
+        <ul class="header-nav-dropdown-content">
+          <li><a href="index.php">Bewoners</a></li>
+          <li><a href="index.php">Keuken</a></li>
+          <li><a href="index.php">Sport</a></li>
+          <li><a href="index.php">Tank</a></li>
+          <li><a href="index.php">Blog</a></li>
+        </ul>
+      </div>
     </div>
     <div class="header-nav-social">
       <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank">
@@ -96,7 +105,7 @@
           <p class="general-article-agenda-event-date">
             <?php
             $dt = new DateTime($upcomingEvent['start']);
-            $date = $dt->format('m/d/Y');
+            $date = $dt->format('d.m.Y');
             echo $date;
             ?>
           </p>

@@ -14,7 +14,7 @@
     </div>
   </nav>
   <div class="header-events-detail-breadcrumb">
-    <h1 class="header-events-detail-goback"><a href="index.php?page=event">Terug naar agenda </a></h1>
+    <a href="index.php?page=event" class="header-events-detail-goback">Terug naar agenda </a>
 </header>
 
 <main>
@@ -29,22 +29,55 @@
         1vw"
        alt="blog-image">
       <div class="event-detail-header-artist-title">
-        <h1><?php echo $event["title"];?></h1>
-        <h2><?php echo $event["start"];?></h2>
+        <h1 class="event-detail-header-artist-title-h1"><?php echo $event["title"];?></h1>
+        <h2 class="event-detail-header-artist-title-h2">
+          <?php
+          $dt = new DateTime($event['start']);
+          $date = $dt->format('d.m.Y');
+          echo $date;?></h2>
       </div>
     </article>
   </section>
 
   <section class="event-detail-icons">
     <!-- <p><?php var_dump($event);?></p> -->
-    <p class="event-detail-icons-organiser"> <?php echo $event['organiser_id'];?></p>
-    <p class="event-detail-icons-place"><?php echo $event['name'];?></p>
-    <p class="event-detail-icons-time"><pre><?php echo $event['start'];?> </pre> </p>
-    <p class="event-detail-icons-tag"><?php echo $event['tag'];?></p>
-  </section>
-  <section class="event-detail-info">
+    <?php if($event['organiser_id']): ?>
+      <p class="event-detail-icons-organiser"> Organisator <?php echo $event['organiser_id'];?></p>
+    <?php endif ?>
 
+    <?php if($event['name']): ?>
+    <p class="event-detail-icons-place"><?php echo $event['name'];?></p>
+    <?php endif ?>
+
+    <?php if($event['start']): ?>
+    <p class="event-detail-icons-time"><?php echo $event['start'];?></p>
+    <?php endif ?>
+
+    <?php if($event['tag']): ?>
+      <p class="event-detail-icons-tag"><?php echo $event['tag'];?></p>
+    <?php endif ?>
   </section>
+
+  <section class="event-detail-information">
+    <div class="event-detail-info">
+      <?php echo $event["description"]; ?>
+    </div>
+    <div class="event-detail-buttons">
+      <p class="event-detail-buttons-title">Ontdek het event:</p>
+      <div class="event-detail-buttons-social">
+        <?php if($event['facebook']): ?>
+          <a href="<?php echo $event['facebook'];?>" class="event-detail-buttons-social-facebook" target="_blank">Facebook</a>
+        <?php endif ?>
+        <?php if($event['youtube']): ?>
+          <a href="<?php echo $event['youtube'];?>" class="event-detail-buttons-social-youtube" target="_blank">Check de video</a>
+        <?php endif ?>
+      </div>
+      <?php if($event['tickets']): ?>
+        <a href="<?php echo $event['tickets'];?>" class="event-detail-buttons-tickets" target="_blank">Tickets</a>
+      <?php endif ?>
+    </div>
+  </section>
+  <br>
   <section class="event-detail-related">
 
   </section>
