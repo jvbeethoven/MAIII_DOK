@@ -71,11 +71,13 @@
         <article class="events-result-item">
           <a href="index.php?page=eventdetail&amp;id=<?php echo $event["id"]; ?>" class="events-result-item-link">
             <img class="events-result-item-img"
-            src="../assets/img/event/<?php echo $event["img"]; ?>.jpg"
-            srcset="../assets/img/event/<?php echo $event["img"]; ?>.jpg 800w,
+            src="../assets/img/event/<?php echo $event["img"];?>.jpg"
+            srcset="../assets/img/event/<?php echo $event["img"];?>.jpg 500w,
+                    assets/img/event/<?php echo $event["img"];?>@50x.jpg 250w,
                     assets/img/default.gif 1w"
             height="474" width="480"
             sizes="(min-width: 590px) 35vw,
+              (min-width: 1160px) 50vw,
               1vw"
              alt="blog-image">
             <div class="events-result-item-info">

@@ -66,6 +66,8 @@ const animate = (oldContent, newContent) => {
     opacity: [1, 0]
   }, 1000);
 
+  console.log(fadeOut);
+
   const fadeIn = newContent.animate({
     opacity: [0, 1]
   }, 1000);

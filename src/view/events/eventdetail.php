@@ -83,4 +83,3 @@
   <section class="event-detail-related">
 
   </section>
-</main>

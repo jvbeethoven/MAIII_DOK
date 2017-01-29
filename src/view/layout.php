@@ -22,7 +22,7 @@
       </article>
       <form action="index.php" method="post" class="newsletter-subscribe-form">
         <input type="email" name="email" class="newsletter-subscribe-input" placeholder="Email address">
-        <button type="submit" class="newsletter-subscribe-submit">Subscribe</button>
+        <button type="submit" class="newsletter-subscribe-submit"></button>
       </form>
     </section>
     <section class="sponsors">
