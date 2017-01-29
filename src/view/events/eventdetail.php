@@ -4,7 +4,7 @@
     <div class="header-nav-items">
       <a href="index.php?page=event" class="header-nav-item header-nav-item-selected header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
-      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over DOK</a>
+      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
     </div>
     <div class="header-nav-social">
       <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank">
@@ -21,12 +21,12 @@
   <section class="event-detail-header">
     <article class="event-detail-header-artist">
       <img class="event-detail-header-artist-img"
-      src="../assets/img/event/<?php echo $event["img"]; ?>.jpg"
-      srcset="../assets/img/event/<?php echo $event["img"]; ?>.jpg 800w,
-              assets/img/default.gif 1w"
-      height="438" width="600"
-      sizes="(min-width: 590px) 35vw,
-        1vw"
+      src="../assets/img/event/<?php echo $event["img"];?>.jpg"
+      srcset="../assets/img/event/<?php echo $event["img"];?>.jpg 500w,
+              assets/img/event/<?php echo $event["img"];?>@50x.jpg 250w"
+      height="474" width="480"
+      sizes="(min-width: 1160px) 35vw,
+            50vw"
        alt="blog-image">
       <div class="event-detail-header-artist-title">
         <h1 class="event-detail-header-artist-title-h1"><?php echo $event["title"];?></h1>
@@ -51,7 +51,17 @@
       <?php endif ?>
 
       <?php if($event['start']): ?>
-      <p class="event-detail-icons-time"><?php echo $event['start'];?></p>
+      <p class="event-detail-icons-time">
+              <?php
+              $dt = new DateTime($event['start']);
+              $time = $dt->format('H:i');
+              echo $time;?>
+              -
+              <?php
+              $dt = new DateTime($event['end']);
+              $time = $dt->format('H:i');
+              echo $time;?>
+            </p>
       <?php endif ?>
 
       <?php if($event['tag']): ?>
@@ -65,18 +75,22 @@
       <?php echo $event["description"]; ?>
     </div>
     <div class="event-detail-buttons">
+      <?php if($event['facebook'] || $event['youtube'] || $event['tickets']): ?>
       <p class="event-detail-buttons-title">Ontdek het event:</p>
+      <?php endif ?>
+
+      <?php if($event['tickets']): ?>
+        <a href="<?php echo $event['tickets'];?>" class="event-detail-buttons-tickets" target="_blank">Tickets</a>
+      <?php endif ?>
+
       <div class="event-detail-buttons-social">
         <?php if($event['facebook']): ?>
           <a href="<?php echo $event['facebook'];?>" class="event-detail-buttons-social-facebook" target="_blank">Facebook</a>
         <?php endif ?>
         <?php if($event['youtube']): ?>
-          <a href="<?php echo $event['youtube'];?>" class="event-detail-buttons-social-youtube" target="_blank">Check de video</a>
+          <a href="<?php echo $event['youtube'];?>" class="event-detail-buttons-social-youtube" target="_blank">YouTube</a>
         <?php endif ?>
       </div>
-      <?php if($event['tickets']): ?>
-        <a href="<?php echo $event['tickets'];?>" class="event-detail-buttons-tickets" target="_blank">Tickets</a>
-      <?php endif ?>
     </div>
   </section>
   <br>

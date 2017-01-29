@@ -1,8 +1,9 @@
 let mouseX, mouseY;
 
-export default ({element, xPos = 0, yPos = 0} = {}) => {
+export default ({element, xPos = 0, yPos = 0, random = 1} = {}) => {
   document.addEventListener(`mousemove`, handleMouseMove);
-  requestAnimationFrame(() => move(element, xPos, yPos));
+  requestAnimationFrame(() => move(element, xPos, yPos, random));
+  // console.log(random);
 
   mouseX = innerWidth / 2;
   mouseY = innerHeight / 2;
@@ -12,19 +13,21 @@ const handleMouseMove = e => {
   ({pageX: mouseX, pageY: mouseY} = e);
 };
 
-const move = (element, xPos, yPos) => {
+const move = (element, xPos, yPos, random) => {
 
   const height = document.body.clientHeight;
   const width = document.body.clientWidth;
 
-  const yValue = mapRange(mouseY, 0, height, yPos - 3, yPos + 3);
-  const xValue = mapRange(mouseX, 0, width, xPos - 1, xPos + 1);
+  const xMultiplied = mouseX * random;
+  const yMultiplied = mouseY * random;
 
+  const yValue = mapRange(yMultiplied, 0, height, yPos - 4, yPos + 4);
+  const xValue = mapRange(xMultiplied, 0, width, xPos - 0.5, xPos + 0.5);
 
   element.style.left = `${xValue}%`;
   element.style.top = `${(yValue)}%`;
 
-  requestAnimationFrame(() => move(element, xPos, yPos));
+  requestAnimationFrame(() => move(element, xPos, yPos, random));
 };
 
 const mapRange = (value, low1, high1, low2, high2) => {

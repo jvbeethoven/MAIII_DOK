@@ -322,12 +322,14 @@ select {
 
   &-date {
     position: absolute;
-    top: 82%;
+    top: 87%;
+    left: 37%;
   }
 
   &-place {
     position: absolute;
-    top: 87%;
+    top: 92%;
+    left: 40%;
   }
 
   &::after {
@@ -678,7 +680,7 @@ select {
   flex-wrap: wrap;
 
   background-color: var(--light-pink);
-  width: 100%;
+  width: 100vw;
   min-height: 16rem;
   max-height: 20rem;
   margin-bottom: 5rem;
@@ -688,6 +690,7 @@ select {
     justify-content: space-around;
     align-items: center;
     margin: 0 2rem;
+    max-width: 26rem;
 
   }
 
@@ -697,7 +700,6 @@ select {
     color: white;
     font-size: 1.6rem;
     height: 4.5rem;
-    max-width: 30rem;
     min-width: 24rem;
     margin-right: .3rem;
 
@@ -818,14 +820,14 @@ select {
   width: 100vw;
   background-color: var(--light-pink);
   min-height: 38rem;
-  max-height: 45rem;
+  max-height: 50rem;
 
   display: flex;
   justify-content: center;
 
   &-artist {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     width: 75vw;
@@ -834,13 +836,17 @@ select {
   &-artist-img {
     width: 100%;
     max-width: 65rem;
-    min-width: 40rem;
+    min-width: 30rem;
     height: 100%;
+    max-height: 40rem;
     object-fit: cover;
   }
 
   &-artist-title {
     margin: 3rem;
+    min-width: 30rem;
+    max-width: 65rem;
+    order: 1;
   }
 
   &-artist-title-h1 {
@@ -926,13 +932,12 @@ select {
 
   font-size: 1.8rem;
   color: var(--dark-purple);
-  width: 40vw;
-  max-width: 60rem;
-  min-width: 30rem;
+  width: 50vw;
+  max-width: 70rem;
+  min-width: 28rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 5rem 0 0;
+  margin: 5rem 1.3rem 0 0;
   order: 1;
 
   font-family: helvetica, arial, sans-serif;
@@ -950,6 +955,8 @@ select {
 
   &-dates {
     font-size: 2rem;
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    margin: 2rem 0;
   }
 }
 
@@ -967,14 +974,20 @@ select {
     margin-bottom: 1rem;
   }
 
+  &-social {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-social-facebook, &-social-youtube, &-tickets {
     @apply --hover-normal;
 
     padding: 1.5rem 5rem;
+    margin: 1rem 0;
     text-decoration: none;
 
     &::before {
-      background-color: var(--light-green);
+      background-color: var(--dark-purple);
 
       @apply --hover-before;
     }
@@ -997,6 +1010,11 @@ select {
     width: 20rem;
     height: 5rem;
     color: var(--light-pink);
+    text-transform: uppercase;
+
+    &::before {
+      background-color: var(--light-green);
+    }
   }
 }
 
@@ -1030,7 +1048,7 @@ select {
   .header {
 
     &-nav {
-      font-size: 2.5vw;
+      font-size: 2.3rem;
 
       &-logo {
         width: 10vw;
@@ -1109,7 +1127,7 @@ select {
 
   .event-detail-buttons { align-items: flex-end; }
 
-  .event-detail-information, .newsletter, .sponsors { width: 90vw; }
+  .event-detail-information, .newsletter, .sponsors { width: 86vw; }
 }
 
 @media only screen and (width <= 987px) {
@@ -1137,6 +1155,23 @@ select {
     }
   }
 
+  .event-detail-header-artist {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 2rem;
+
+    &-title {
+      margin: 3rem 0;
+    }
+
+    &-title-h1 { font-size: 2.3rem; }
+
+    &-img {
+      margin-bottom: 3rem;
+      order: 2;
+    }
+  }
+
 }
 
 @media only screen and (width <= 590px) {
@@ -1161,6 +1196,12 @@ select {
     &-events-detail {
       height: 15rem;
       margin: auto;
+
+      &-breadcrumb {
+        height: 12rem;
+        width: 100vw;
+        padding: 6rem 5rem 0;
+      }
     }
 
   }
@@ -1168,15 +1209,16 @@ select {
   .header-nav {
 
     font-size: 1.4rem;
-    align-items: flex-end;
+    /*align-items: flex-end;*/
     padding-bottom: 1rem;
-    height: 8vh;
+    height: 10vh;
+    width: 100vw;
     position: fixed;
 
     &-logo {
       width: 10rem;
       height: 4.3rem;
-      margin: 0 2rem 0 1rem;
+      margin: 3rem 3rem 0 1rem;
     }
 
     &-item { margin-right: 8vw; }
@@ -1184,7 +1226,7 @@ select {
     &-items {
       justify-content: center;
       align-items: center;
-      width: 75%;
+      width: 70%;
     }
 
     &-item-agenda {
@@ -1214,7 +1256,6 @@ select {
     }
 
     &-item-about {
-      width: 7rem;
 
       &::before {
         background: url(../assets/svg/about.svg) no-repeat;
@@ -1223,7 +1264,7 @@ select {
         display: block;
         width: 7vw;
         height: 7vw;
-        margin: .5rem 1.5rem;
+        margin: .5rem;
       }
     }
 
@@ -1334,6 +1375,8 @@ select {
     &-form-search, &-form-tag, &-form-month {
       margin: .4rem 0;
     }
+
+    &-form-search { margin-left: -1rem; }
   }
 
   .events-result { width: 100vw; }
@@ -1347,6 +1390,8 @@ select {
     &-img { display: none; }
 
     &-info { min-width: 20rem; }
+
+    &-link:hover > .events-result-item-info { transform: none; }
   }
 
   .event-detail-info {

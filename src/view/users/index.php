@@ -5,7 +5,7 @@
       <a href="index.php?page=event" class="header-nav-item header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
       <div class="header-nav-dropdown">
-        <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over DOK</a>
+        <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
         <ul class="header-nav-dropdown-content">
           <li><a href="index.php">Bewoners</a></li>
           <li><a href="index.php">Keuken</a></li>

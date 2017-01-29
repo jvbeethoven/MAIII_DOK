@@ -4,7 +4,7 @@
     <div class="header-nav-items">
       <a href="index.php?page=event" class="header-nav-item header-nav-item-selected header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
-      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over DOK</a>
+      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
     </div>
     <div class="header-nav-social">
       <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank"></a>
