@@ -67,24 +67,24 @@ select {
 
 .header {
   color: var(--dark-purple);
-  height: 55vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 3;
+  z-index: 17;
   overflow: hidden;
+  height: 10rem;
 
   &-nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 8vh;
+    height: 10rem;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 100;
 
     font-family: arial;
     font-weight: bold;
@@ -145,9 +145,12 @@ select {
   }
 
   &-nav-social {
-    min-width: 15rem;
+    max-width: 10rem;
+    min-width: 7rem;
     min-height: 4rem;
     display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   &-nav-social-facebook, &-nav-social-twitter {
@@ -155,6 +158,8 @@ select {
     width: 3rem;
     height: 3rem;
     display: block;
+
+    &:hover { filter: hue-rotate(-40deg); }
   }
 
   &-nav-social-facebook {
@@ -163,6 +168,7 @@ select {
 
   &-nav-social-twitter {
     background: url(../assets/svg/twitter.svg) no-repeat;
+    background-size: 110%;
   }
 
 }
@@ -231,10 +237,12 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10rem;
 
   width: 100vw;
-  height: 50vw;
-  z-index: -1;
+  height: 45vw;
+  z-index: 1;
+  color: var(--dark-purple);
 
   &-title, &-date, &-place {
     font-size: 2vw;
@@ -243,22 +251,23 @@ select {
   &-images {
     position: relative;
     width: 80vw;
-    height: 30vw;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
   }
 
   &-title {
-    height: 15vw;
+    height: 23vw;
     width: 60vw;
 
-    background: url(../assets/img/header/titel.png) no-repeat;
+    background: url(../assets/img/header/title.png) no-repeat;
     background-size: 100%;
 
     position: absolute;
-    top: 50%;
+    top: 19%;
+    left: 19%;
     z-index: 3;
 
     &-hidden {
@@ -271,10 +280,10 @@ select {
     background-size: 100%;
 
     position: absolute;
-    top: 40%;
-    height: 27vw;
+    top: 6%;
+    left: 10%;
+    height: 34vw;
     width: 65vw;
-    z-index: 2;
   }
 
   &-img2 {
@@ -282,10 +291,10 @@ select {
     background-size: 100%;
 
     position: absolute;
-    top: 57%;
-    right: 17%;
-    height: 30vw;
-    width: 60vw;
+    top: 6%;
+    right: 6%;
+    height: 35vw;
+    width: 65vw;
   }
 
   &-img3 {
@@ -293,30 +302,22 @@ select {
     background-size: 100%;
 
     position: absolute;
-    top: 40%;
-    height: 35vw;
-    width: 70vw;
+    top: 14%;
+    left: 18%;
+    height: 28vw;
+    width: 53vw;
   }
 
   &-img4 {
-    background: url(../assets/img/header/crane.png) no-repeat;
+    background: url(../assets/img/header/front.png) no-repeat;
     background-size: 100%;
 
     position: absolute;
-    top: 12%;
-    height: 27vw;
-    width: 20vw;
-  }
-
-  &-img5 {
-    background: url(../assets/img/header/flag.png) no-repeat;
-    background-size: 100%;
-
-    position: absolute;
-    top: 12%;
-    right: 15%;
-    height: 37vw;
-    width: 15vw;
+    top: 20%;
+    left: 11%;
+    height: 26vw;
+    width: 14vw;
+    z-index: 3;
   }
 
   &-date {
@@ -328,6 +329,18 @@ select {
     position: absolute;
     top: 87%;
   }
+
+  &::after {
+    background: url(../assets/svg/header-border.svg) no-repeat;
+    background-size: 110%;
+    content: '';
+    z-index: -1;
+    width: 110%;
+    height: 30rem;
+    position: absolute;
+    left: -3%;
+    top: 80%;
+  }
 }
 
 .general {
@@ -335,9 +348,10 @@ select {
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   width: 75vw;
+  margin-top: -7rem;
 
   &-article-news, &-article-dok, &-article-agenda {
     margin-bottom: 6vw;
@@ -638,14 +652,23 @@ select {
 
 .sponsors {
   width: 75vw;
-  height: 15rem;
-  background-color: var(--light-green);
+  min-height: 15rem;
   padding: 3rem 2rem;
   margin-bottom: 3rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+
+  &-img {
+    position: relative;
+    min-height: 3rem;
+    min-width: 8rem;
+    padding: 1.5rem;
+
+    &:hover { filter: hue-rotate(90deg); }
+  }
 }
 
 .events-search {
@@ -846,7 +869,7 @@ select {
     align-items: center;
     flex-wrap: wrap;
     height: 100%;
-    width: 80vw;
+    width: 75vw;
   }
 
   &-organiser, &-place, &-time, &-tag {
@@ -977,6 +1000,31 @@ select {
   }
 }
 
+.footer {
+  max-height: 5rem;
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem 0;
+
+  &-logo {
+    width: 15rem;
+    height: 7rem;
+
+    &:hover { filter: hue-rotate(-40deg); }
+  }
+
+  &-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 10rem;
+    visibility: hidden;
+  }
+
+}
+
 @media only screen and (width <= 1160px) {
 
   .header {
@@ -1055,7 +1103,7 @@ select {
     height: 15rem;
 
     &-organiser, &-place, &-time, &-tag {
-      min-width: 33rem;
+      min-width: 29rem;
     }
   }
 
@@ -1085,13 +1133,8 @@ select {
     height: 22rem;
 
     &-container {
-      width: 90vw;
-      justify-content: center;
+      justify-content: flex-start;
     }
-
-    /*&-organiser, &-place, &-time, &-tag {
-      min-width: 27rem;
-    }*/
   }
 
 }
@@ -1099,13 +1142,13 @@ select {
 @media only screen and (width <= 590px) {
 
   .header {
-    height: 30rem;
     margin-bottom: 3rem;
+    height: 100%;
 
     &-container {
       height: 30rem;
 
-      &-img1, &-img2, &-img3, &-img4, &-img5, &-date, &-place { display: none; }
+      &-img1, &-img2, &-img3, &-img4, &-img5, &-date, &-place { background: none; }
     }
 
     &-events {
@@ -1200,7 +1243,7 @@ select {
       &-img { display: none; }
 
       &-title {
-        height: 10rem;
+        min-height: 10rem;
         width: 100vw;
         padding: 1rem;
         align-items: center;
@@ -1276,6 +1319,8 @@ select {
       font-size: 2.3rem;
     }
 
+    &-subscribe-form { width: 100%; }
+
     &-subscribe-input {
       max-width: 25rem;
       min-width: 10rem;
@@ -1308,5 +1353,7 @@ select {
 
     &-desktop { display: none; }
   }
+
+  .footer-social { visibility: visible; }
 
 }

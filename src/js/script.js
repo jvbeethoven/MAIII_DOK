@@ -1,7 +1,7 @@
 import handleMouseMoveDocument from './lib/HandleMouseMoveDocument';
 import loadSearchEvents from './lib/LoadSearchEvents';
 import scrollEvent from './lib/ScrollEvent';
-import pageTransition from './lib/PageTransition';
+// import pageTransition from './lib/PageTransition';
 
 
 const init = () => {
@@ -9,7 +9,7 @@ const init = () => {
 
   const $img = document.querySelector(`.header-container-title`);
   if ($img) {
-    handleMouseMoveDocument({element: $img, xPos: 10, yPos: 50});
+    handleMouseMoveDocument({element: $img, xPos: 19, yPos: 19});
   }
 
   const searchInputField = document.querySelector(`.events-search-form-input`);
@@ -27,9 +27,9 @@ const init = () => {
     scrollEvent({element: homeItems});
   }
 
-  if (navigator.userAgent.toLowerCase().indexOf(`chrome`) > - 1) {
-    pageTransition();
-  }
+  // if (navigator.userAgent.toLowerCase().indexOf(`chrome`) > - 1) {
+  //   console.log(pageTransition());
+  // }
 
 };
 

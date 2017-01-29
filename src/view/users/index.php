@@ -16,27 +16,24 @@
       </div>
     </div>
     <div class="header-nav-social">
-      <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank">
-      </a>
-      <a href="https://www.facebook.com" class="header-nav-social-twitter" target="_blank">
-      </a>
+      <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank"></a>
+      <a href="https://www.facebook.com" class="header-nav-social-twitter" target="_blank"></a>
     </div>
   </nav>
-  <div class="header-container">
+</header>
+
+<main>
+  <section class="header-container">
     <div class="header-container-images">
       <div class="header-container-img1"></div>
       <div class="header-container-img2"></div>
       <div class="header-container-img3"></div>
-      <div class="header-container-img4"></div>
-      <div class="header-container-img5"></div>
       <h1 class="header-container-title"><span class="header-container-title-hidden">DOK17</span></h1>
+      <div class="header-container-img4"></div>
     </div>
     <h2 class="header-container-date">01.05.17 - 25.09.17</h2>
     <h2 class="header-container-place">GENTSE DOKKEN</h2>
-  </div>
-</header>
-
-<main>
+  </section>
   <section class="general">
 
     <article class="general-article-news general-article-news-one">
