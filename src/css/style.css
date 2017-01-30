@@ -41,6 +41,10 @@
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(.52, 1.64, .37, .66);
   }
+
+  --img: { transition: all .5s ease-in-out; }
+
+  --img-hover: { transform: scale(1.1); }
 }
 
 body {
@@ -248,7 +252,6 @@ select {
 
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
   }
 
   &-title {
@@ -346,7 +349,7 @@ select {
   z-index: 3;
 
   width: 75vw;
-  margin-top: -7rem;
+  margin: -7rem 0 1rem 0;
 
   &-article-news, &-article-dok, &-article-agenda {
     margin-bottom: 6vw;
@@ -362,6 +365,7 @@ select {
   max-width: 75vw;
   position: relative;
   background-color: var(--light-pink);
+  overflow: hidden;
 
   &-link {
     text-decoration: none;
@@ -369,6 +373,10 @@ select {
 
     &:hover > .general-article-news-title {
       transform: translateY(-5rem);
+    }
+
+    &:hover > .general-article-news-img {
+      @apply --img-hover;
     }
   }
 
@@ -397,6 +405,8 @@ select {
     height: 37rem;
     width: 100%;
     object-fit: cover;
+
+    @apply --img;
   }
 
   &-one {
@@ -578,14 +588,55 @@ select {
 }
 
 .map {
-  height: 40vw;
+  height: 25vw;
+  min-height: 35rem;
   width: 100vw;
-  background-color: var(--dark-purple);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
-  margin-bottom: 6rem;
+  margin: 4rem;
+  position: relative;
+
+  &-img {
+    background: url(../assets/img/map.png) no-repeat;
+    background-size: 130%;
+
+    height: 28vw;
+    min-height: 40rem;
+    width: 80vw;
+    min-width: 80rem;
+
+    position: absolute;
+    top: -11%;
+    left: -100%;
+  }
+
+  &-link {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--dark-purple);
+    background-color: var(--light-pink);
+
+    padding: 2rem;
+    position: relative;
+    top: 40%;
+    left: 10%;
+
+    @apply --hover-normal;
+    @apply --box-shadow;
+
+    &::before {
+      background: var(--light-green);
+
+      @apply --hover-before;
+    }
+
+    &:hover::before, &:active::before, &:focus::before {
+      @apply --hover-active-focus;
+    }
+  }
 }
 
 .newsletter {
@@ -1129,6 +1180,8 @@ select {
 
 @media only screen and (width <= 987px) {
 
+  .map { display: none; }
+
   .header-events-title {
     display: none;
   }
@@ -1360,8 +1413,6 @@ select {
 
     &-quote-button { font-size: 2rem; }
   }
-
-  .map { display: none; }
 
   .newsletter, .sponsors { width: 100vw; }
 

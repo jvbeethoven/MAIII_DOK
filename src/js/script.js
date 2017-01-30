@@ -10,6 +10,7 @@ const init = () => {
   const $img3 = document.querySelector(`.header-container-img2`);
   const $img4 = document.querySelector(`.header-container-img3`);
   const $img5 = document.querySelector(`.header-container-img4`);
+  const $map = document.querySelector(`.map-img`);
 
   if (window.innerWidth > 987) {
     if ($img) {
@@ -30,6 +31,10 @@ const init = () => {
 
     if ($img5) {
       handleMouseMoveDocument({element: $img5, xPos: 11, yPos: 20, random: - 3});
+    }
+
+    if ($map) {
+      handleMouseMoveDocument({element: $map, xPos: 1, yPos: 10, random: - 3});
     }
   }
 

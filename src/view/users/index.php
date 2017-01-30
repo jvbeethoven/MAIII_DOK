@@ -120,4 +120,7 @@
     </blockquote>
     <a href="#" class="resident-quote-button">Word zelf resident</a>
   </section>
-  <section class="map"></section>
+  <section class="map">
+    <div class="map-img"></div>
+    <a href="#" class="map-link">Ontdek de dokken!</a>
+  </section>
