@@ -2,27 +2,35 @@
   <nav class="header-nav">
     <a href="index.php" class="header-nav-logo"><span class="header-nav-logo-hidden">DOK</span></a>
     <div class="header-nav-items">
-      <a href="index.php?page=event" class="header-nav-item header-nav-item-selected header-nav-item-agenda">Agenda</a>
+      <a href="index.php?page=event" class="header-nav-item header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
-      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
+      <div class="header-nav-dropdown">
+        <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
+        <ul class="header-nav-dropdown-content">
+          <li><a href="index.php">Bewoners</a></li>
+          <li><a href="index.php">Keuken</a></li>
+          <li><a href="index.php">Sport</a></li>
+          <li><a href="index.php">Tank</a></li>
+          <li><a href="index.php">Blog</a></li>
+        </ul>
+      </div>
     </div>
     <div class="header-nav-social">
-      <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank">
-      </a>
-      <a href="https://www.facebook.com" class="header-nav-social-twitter" target="_blank">
-      </a>
+      <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank"></a>
+      <a href="https://www.facebook.com" class="header-nav-social-twitter" target="_blank"></a>
     </div>
   </nav>
   <div class="header-events-detail-breadcrumb">
     <a href="index.php?page=event" class="header-events-detail-goback">Terug naar agenda </a>
+  </div>
 </header>
 
 <main>
   <section class="event-detail-header">
     <article class="event-detail-header-artist">
       <img class="event-detail-header-artist-img"
-      src="../assets/img/event/<?php echo $event["img"];?>.jpg"
-      srcset="../assets/img/event/<?php echo $event["img"];?>.jpg 500w,
+      src="assets/img/event/<?php echo $event["img"];?>.jpg"
+      srcset="assets/img/event/<?php echo $event["img"];?>.jpg 500w,
               assets/img/event/<?php echo $event["img"];?>@50x.jpg 250w"
       height="474" width="480"
       sizes="(min-width: 1160px) 35vw,

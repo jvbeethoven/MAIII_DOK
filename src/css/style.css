@@ -58,6 +58,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 select {
@@ -70,20 +71,18 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  z-index: 17;
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   height: 10rem;
 
   &-nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 10rem;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 100vw;
+    min-height: 9rem;
     z-index: 100;
 
     font-family: arial;
@@ -96,6 +95,8 @@ select {
 
     &-items { display: flex; }
   }
+
+  &-events { width: 100vw; }
 
   &-nav-logo {
     width: 7vw;
@@ -173,55 +174,47 @@ select {
 
 }
 
-.header-events {
+.header-events-title {
+  color: var(--dark-pink);
+  background-color: var(--light-green);
+  height: 100%;
+  min-height: 30rem;
+  width: 100vw;
+  padding: 15rem 10rem 3rem;
 
-  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
-  &-title {
-    color: var(--dark-pink);
-    background-color: var(--light-green);
-    width: 100vw;
-    height: 25vw;
-    position: relative;
+  &-h {
+    font-size: 3.3vw;
+    font-family: 'Arial Black';
+    margin-bottom: 2rem;
+  }
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-
-    &-h {
-      font-size: 3.3vw;
-      font-family: 'Arial Black';
-      position: absolute;
-      top: 40%;
-      left: 9%;
-    }
-
-    &-p {
-      font-size: 1.8rem;
-      max-width: 40vw;
-      position: absolute;
-      top: 60%;
-      left: 9%;
-    }
+  &-p {
+    font-size: 1.8rem;
+    max-width: 40vw;
   }
 }
 
 .header-events-detail {
-  height: 17rem;
-  margin: auto;
 
   &-breadcrumb {
     background-color: var(--light-green);
     color: var(--light-pink);
     font-size: 2rem;
-    height: 17rem;
+    height: 100%;
+    min-height: 5rem;
     width: 100vw;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 12rem 5rem;
+    padding: 2rem 7rem;
+
+    @apply --box-shadow;
   }
 
   &-goback {
@@ -237,7 +230,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10rem;
+  margin: 9rem 0;
 
   width: 100vw;
   height: 45vw;
@@ -478,7 +471,7 @@ select {
   min-width: 50rem;
   height: 47rem;
   font-size: 2rem;
-  padding: 2rem 3rem;
+  padding: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -821,6 +814,7 @@ select {
   background-color: var(--light-pink);
   min-height: 38rem;
   max-height: 50rem;
+  margin-top: 14rem;
 
   display: flex;
   justify-content: center;
@@ -836,9 +830,10 @@ select {
   &-artist-img {
     width: 100%;
     max-width: 65rem;
-    min-width: 30rem;
+    min-width: 28rem;
     height: 100%;
-    max-height: 40rem;
+    min-height: 38rem;
+    /*max-height: 40rem;*/
     object-fit: cover;
   }
 
@@ -1057,15 +1052,17 @@ select {
     }
 
     &-events {
+      height: 10vw;
 
-      max-height: 18rem;
-
-      &-title-p { display: none; }
+      &-title {
+        height: 100%;
+        width: 100vw;
+        /*padding: 12rem 10rem 2rem;*/
+      }
 
       &-title-h {
-        top: 60%;
         font-size: 3rem;
-        height: 100%;
+        /*height: 100%;*/
       }
     }
   }
@@ -1132,6 +1129,12 @@ select {
 
 @media only screen and (width <= 987px) {
 
+  .header-events-title {
+    display: none;
+  }
+
+  .events-search { margin-top: 9rem; }
+
   .events-result {
 
     &-item {
@@ -1169,6 +1172,7 @@ select {
     &-img {
       margin-bottom: 3rem;
       order: 2;
+      min-height: 30rem;
     }
   }
 
@@ -1177,30 +1181,40 @@ select {
 @media only screen and (width <= 590px) {
 
   .header {
-    margin-bottom: 3rem;
-    height: 100%;
 
     &-container {
-      height: 30rem;
+      height: 35rem;
+      width: 100vw;
+      margin-top: 10vh;
+      margin-bottom: 11rem;
+      padding: 0;
 
-      &-img1, &-img2, &-img3, &-img4, &-img5, &-date, &-place { background: none; }
-    }
+      &-images { width: 80vw; }
 
-    &-events {
-      height: 16rem;
-      margin: auto;
-    }
+      &-img1, &-img2, &-img3, &-img4, &-img5 {
+        background: none;
+        display: none;
+      }
 
-    &-events-title { height: 100%; }
+      &-title {
+        height: 70vw;
+        width: 100%;
+        background: url(../assets/img/header/header-mobile.png) no-repeat;
 
-    &-events-detail {
-      height: 15rem;
-      margin: auto;
+        top: 20%;
+        left: 10%;
+      }
 
-      &-breadcrumb {
-        height: 12rem;
-        width: 100vw;
-        padding: 6rem 5rem 0;
+      &-date, &-place { font-size: 2rem; }
+
+      &-date {
+        top: 80%;
+        left: 10%;
+      }
+
+      &-place {
+        top: 90%;
+        left: 22%;
       }
     }
 
@@ -1209,16 +1223,15 @@ select {
   .header-nav {
 
     font-size: 1.4rem;
-    /*align-items: flex-end;*/
     padding-bottom: 1rem;
     height: 10vh;
+    max-height: 11rem;
     width: 100vw;
-    position: fixed;
 
     &-logo {
       width: 10rem;
       height: 4.3rem;
-      margin: 3rem 3rem 0 1rem;
+      margin: 2.3rem 3rem 0 1rem;
     }
 
     &-item { margin-right: 8vw; }
@@ -1370,13 +1383,10 @@ select {
 
   .events-search {
     justify-content: flex-start;
-    padding: 2rem 5rem;
+    padding: 2rem 0;
+    height: 20rem;
+    margin-top: 9rem;
 
-    &-form-search, &-form-tag, &-form-month {
-      margin: .4rem 0;
-    }
-
-    &-form-search { margin-left: -1rem; }
   }
 
   .events-result { width: 100vw; }
@@ -1391,7 +1401,21 @@ select {
 
     &-info { min-width: 20rem; }
 
-    &-link:hover > .events-result-item-info { transform: none; }
+    &-link:hover > .events-result-item-info { transform: translateY(0); }
+
+    &-link:hover > .events-result-item-info::after {
+      content: '';
+      background: none;
+    }
+  }
+
+  .event-detail-header { margin-top: 13rem; }
+
+  .event-detail-header-artist {
+
+    align-items: center;
+
+    &-img { max-width: 30rem; }
   }
 
   .event-detail-info {

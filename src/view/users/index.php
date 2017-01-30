@@ -39,8 +39,8 @@
     <article class="general-article-news general-article-news-one">
       <a href="#" class="general-article-news-link">
         <img class="general-article-news-img"
-        src="../assets/img/blog1.jpg"
-        srcset="../assets/img/blog1.jpg 420w,
+        src="assets/img/blog1.jpg"
+        srcset="assets/img/blog1.jpg 420w,
                 assets/img/default.gif 1w"
         height="280" width="420"
         sizes="(min-width: 590px) 35vw,
@@ -56,8 +56,8 @@
     <article class="general-article-news general-article-news-two">
       <a href="#" class="general-article-news-link">
         <img class="general-article-news-img"
-        src="../assets/img/blog2.jpg"
-        srcset="../assets/img/blog2.jpg 800w,
+        src="assets/img/blog2.jpg"
+        srcset="assets/img/blog2.jpg 800w,
                 assets/img/default.gif 1w"
         height="474" width="800"
         sizes="(min-width: 590px) 35vw,
@@ -73,8 +73,8 @@
     <article class="general-article-news general-article-news-three">
       <a href="#" class="general-article-news-link">
         <img class="general-article-news-img general-article-news-three-img"
-        src="../assets/img/blog3.jpg"
-        srcset="../assets/img/blog3.jpg 420w,
+        src="assets/img/blog3.jpg"
+        srcset="assets/img/blog3.jpg 420w,
                 assets/img/default.gif 1w"
         height="480" width="420"
         sizes="(min-width: 590px) 35vw,
@@ -121,4 +121,3 @@
     <a href="#" class="resident-quote-button">Word zelf resident</a>
   </section>
   <section class="map"></section>
-</main>

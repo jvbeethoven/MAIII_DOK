@@ -1,8 +1,6 @@
 import handleMouseMoveDocument from './lib/HandleMouseMoveDocument';
 import loadSearchEvents from './lib/LoadSearchEvents';
 // import scrollEvent from './lib/ScrollEvent';
-// import pageTransition from './lib/PageTransition';
-
 
 const init = () => {
   console.log(`hello`);
@@ -13,24 +11,26 @@ const init = () => {
   const $img4 = document.querySelector(`.header-container-img3`);
   const $img5 = document.querySelector(`.header-container-img4`);
 
-  if ($img) {
-    handleMouseMoveDocument({element: $img, xPos: 19, yPos: 19, random: - 2.5});
-  }
+  if (window.innerWidth > 987) {
+    if ($img) {
+      handleMouseMoveDocument({element: $img, xPos: 19, yPos: 19, random: - 2.5});
+    }
 
-  if ($img2) {
-    handleMouseMoveDocument({element: $img2, xPos: 6, yPos: 10, random: - 1});
-  }
+    if ($img2) {
+      handleMouseMoveDocument({element: $img2, xPos: 6, yPos: 10, random: - 1});
+    }
 
-  if ($img3) {
-    handleMouseMoveDocument({element: $img3, xPos: 6, yPos: 6, random: - 1.5});
-  }
+    if ($img3) {
+      handleMouseMoveDocument({element: $img3, xPos: 6, yPos: 6, random: - 1.5});
+    }
 
-  if ($img4) {
-    handleMouseMoveDocument({element: $img4, xPos: 14, yPos: 18, random: - 2});
-  }
+    if ($img4) {
+      handleMouseMoveDocument({element: $img4, xPos: 14, yPos: 18, random: - 2});
+    }
 
-  if ($img5) {
-    handleMouseMoveDocument({element: $img5, xPos: 11, yPos: 20, random: - 3});
+    if ($img5) {
+      handleMouseMoveDocument({element: $img5, xPos: 11, yPos: 20, random: - 3});
+    }
   }
 
   const searchInputField = document.querySelector(`.events-search-form-input`);
@@ -48,9 +48,6 @@ const init = () => {
   //   scrollEvent({element: homeItems});
   // }
 
-  // if (navigator.userAgent.toLowerCase().indexOf(`chrome`) > - 1) {
-  //   console.log(pageTransition());
-  // }
 
 };
 
