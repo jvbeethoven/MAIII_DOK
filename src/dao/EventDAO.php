@@ -27,6 +27,7 @@ class EventDAO extends DAO {
       LEFT OUTER JOIN `ma3_dok_events_tags` ON ma3_dok_events.id = ma3_dok_events_tags.event_id
       LEFT OUTER JOIN `ma3_dok_tags` ON ma3_dok_tags.id = ma3_dok_events_tags.tag_id
       WHERE 1
+      -- ORDER BY start ASC
     ";
     $conditionSqls = array();
     $conditionParams = array();
@@ -91,7 +92,13 @@ class EventDAO extends DAO {
   }
 
   public function selectById($id) {
-    $sql = "SELECT * FROM `ma3_dok_events` WHERE `id` = :id";
+    $sql ="SELECT * FROM `ma3_dok_events`
+      INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id
+      LEFT OUTER JOIN `ma3_dok_events_locations` ON ma3_dok_events.id = ma3_dok_events_locations.event_id
+      LEFT OUTER JOIN `ma3_dok_locations` ON ma3_dok_locations.id = ma3_dok_events_locations.location_id
+      LEFT OUTER JOIN `ma3_dok_events_tags` ON ma3_dok_events.id = ma3_dok_events_tags.event_id
+      LEFT OUTER JOIN `ma3_dok_tags` ON ma3_dok_tags.id = ma3_dok_events_tags.tag_id
+      WHERE ma3_dok_events.id = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();

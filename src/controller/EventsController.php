@@ -29,6 +29,23 @@ class EventsController extends Controller {
 
   }
 
+  public function eventdetail() {
+    if( !isset( $_GET["id"]) ){
+      $_SESSION["error"] = ['Dit event bestaat niet'];
+      $this->redirect('index.php?page=event');
+    }
+
+    $id = $_GET["id"];
+    $event = $this->eventDAO->selectById( $id );
+
+    if( !$event ){
+      $_SESSION["error"] = ['Dit event bestaat niet'];
+      $this->redirect('index.php?page=event');
+    }
+
+    $this->set('event', $event);
+  }
+
   public function _searchEventsIfNeeded() {
     $conditions = array();
 
@@ -49,10 +66,24 @@ class EventsController extends Controller {
         'value' => $_GET["tag"]
       );
     }
-
+    //
     // if( isset( $_POST["month"]) ){
     //   var_dump($_POST("month"));
     // }
+
+    if( isset( $_GET["month"]) ){
+      // example: events happening on march first
+      $conditions[0] = array(
+        'field' => 'start',
+        'comparator' => '>',
+        'value' => '2017-'.$_GET["month"].'-01 00:00:00'
+      );
+      $conditions[1] = array(
+        'field' => 'end',
+        'comparator' => '<',
+        'value' => '2017-'.$_GET["month"].'-31 00:00:00'
+      );
+    }
 
     //
     // // example: events happening on march first

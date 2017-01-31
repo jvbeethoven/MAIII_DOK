@@ -3,7 +3,8 @@ const webpack = require(`webpack`);
 
 // change for production build on different server path
 // relatieve paden gebruiken
-const publicPath = `/`;
+const publicPath = `http://student.howest.be/julie.van.beethoven/20162017/ma3/dok/`;
+// const publicPath = `/`;
 
 const config = {
   entry: {

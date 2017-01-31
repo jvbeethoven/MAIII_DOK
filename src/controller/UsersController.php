@@ -12,6 +12,8 @@ class UsersController extends Controller {
   }
 
   public function index() {
+    $upcomingEvents = $this->userDAO->selectUpcoming();
+    $this->set('upcomingEvents', $upcomingEvents);
 
   }
 
