@@ -1,19 +1,10 @@
-<header class="header header-events">
+<header class="header">
   <nav class="header-nav">
     <a href="index.php" class="header-nav-logo"><span class="header-nav-logo-hidden">DOK</span></a>
     <div class="header-nav-items">
       <a href="index.php?page=event" class="header-nav-item header-nav-item-selected header-nav-item-agenda">Agenda</a>
       <a href="index.php?page=practical" class="header-nav-item header-nav-item-practical">Praktisch</a>
-      <div class="header-nav-dropdown">
-        <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
-        <ul class="header-nav-dropdown-content">
-          <li><a href="index.php">Bewoners</a></li>
-          <li><a href="index.php">Keuken</a></li>
-          <li><a href="index.php">Sport</a></li>
-          <li><a href="index.php">Tank</a></li>
-          <li><a href="index.php">Blog</a></li>
-        </ul>
-      </div>
+      <a href="index.php?page=about" class="header-nav-item header-nav-item-about">Over</a>
     </div>
     <div class="header-nav-social">
       <a href="https://www.twitter.com" class="header-nav-social-facebook" target="_blank"></a>
@@ -44,7 +35,7 @@
         <? endforeach;?>
       </select>
       <input type="hidden" name="page" value="event">
-      <input type="submit" name="action" value="zoek">
+      <input  class="submit" type="submit" name="action" value="zoek">
     </form>
 
     <form class="events-search-form-month" action="index.php?page=event" method="get">
@@ -57,7 +48,7 @@
         <option value='09'>September</option>
       </select>
       <input type="hidden" name="page" value="event">
-      <input type="submit" name="action" value="zoek">
+      <input  class="submit" type="submit" name="action" value="zoek">
     </form>
 
   </section>
@@ -95,3 +86,29 @@
         </article>
       <?php endforeach;?>
   </section>
+
+  <section class="newsletter">
+    <article class="newsletter-text">
+      <h1 class="newsletter-text-title">Fan van DOK?</h1>
+      <p class="newsletter-text-p">Laten we het officieel maken door je in te schrijven op de nieuwsbrief.</p>
+    </article>
+    <form action="index.php" method="post" class="newsletter-subscribe-form">
+      <input type="email" name="email" class="newsletter-subscribe-input" placeholder="Email adres">
+      <button type="submit" class="newsletter-subscribe-submit"></button>
+    </form>
+  </section>
+  <section class="sponsors">
+    <a href="https://www.vlaanderen.be/nl" class="sponsors-img sponsors-img-1" target="_blank"><img src="assets/img/sponsors/sponsor1.png" alt="logo sponsor"></a>
+    <a href="https://stad.gent/" class="sponsors-img sponsors-img-2" target="_blank"><img src="assets/img/sponsors/sponsor2.png" alt="logo sponsor"></a>
+    <a href="http://www.thuisindestad.be/" class="sponsors-img sponsors-img-3" target="_blank"><img src="assets/img/sponsors/sponsor3.png" alt="logo sponsor"></a>
+    <a href="http://sogent.be/" class="sponsors-img sponsors-img-4" target="_blank"><img src="assets/img/sponsors/sponsor4.png" alt="logo sponsor"></a>
+    <a href="https://www.cirq.be/" class="sponsors-img sponsors-img-5" target="_blank"><img src="assets/img/sponsors/sponsor5.png" alt="logo sponsor"></a>
+    <a href="http://democrazy.be/" class="sponsors-img sponsors-img-6" target="_blank"><img src="assets/img/sponsors/sponsor6.png" alt="logo sponsor"></a>
+    <a href="http://vedett.be/" class="sponsors-img sponsors-img-7" target="_blank"><img src="assets/img/sponsors/sponsor7.png" alt="logo sponsor"></a>
+    <a href="http://www.pepsi.com/nl-be/d" class="sponsors-img sponsors-img-8" target="_blank"><img src="assets/img/sponsors/sponsor8.png" alt="logo sponsor"></a>
+    <a href="http://www.bionade.de/" class="sponsors-img sponsors-img-9" target="_blank"><img src="assets/img/sponsors/sponsor9.png" alt="logo sponsor"></a>
+    <a href="http://biofresh.be/index.php?id=54" class="sponsors-img sponsors-img-10" target="_blank"><img src="assets/img/sponsors/sponsor10.png" alt="logo sponsor"></a>
+    <a href="#" class="sponsors-img sponsors-img-11" target="_blank"><img src="assets/img/sponsors/sponsor11.png" alt="logo sponsor"></a>
+
+  </section>
+</main>

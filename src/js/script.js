@@ -34,7 +34,7 @@ const init = () => {
     }
 
     if ($map) {
-      handleMouseMoveDocument({element: $map, xPos: 1, yPos: 10, random: - 3});
+      handleMouseMoveDocument({element: $map, xPos: 7, yPos: 10, random: - 3});
     }
   }
 
