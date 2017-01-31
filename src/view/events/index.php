@@ -49,34 +49,23 @@
 
     <form class="events-search-form-month" action="index.php?page=event" method="get">
       <select class="events-search-form-month-select" name="month">
-        <option value='' disabled selected>Wanneer</option>
-        <option value="Mei" data-start="2017-05-01 00:00:00" data-end="2017-05-31 23:59:59">Mei</option>
-        <option value='Juni'>Juni</option>
-        <option value='Juli'>Juli</option>
-        <option value='Augustus'>Augustus</option>
-        <option value='September'>September</option>
+        <option value='01' disabled selected>Wanneer</option>
+        <option value="05">Mei</option>
+        <option value='06'>Juni</option>
+        <option value='07'>Juli</option>
+        <option value='08'>Augustus</option>
+        <option value='09'>September</option>
       </select>
+      <input type="hidden" name="page" value="event">
       <input type="submit" name="action" value="zoek">
     </form>
 
   </section>
-  <!-- <section>
-    <h1>Events</h1>
-    <?php foreach($events as $event): ?>
-      <article>
-        <header><h2><?php echo $event['title']; ?></h2></header>
-        <dl>
-          <dt>title</dt><dd><?php echo $event['title'];?></dd>
-          <dt>locations</dt><dd><ul><?php foreach($event['locations'] as $location): ?><li><?php echo $location['name'];?></li><?php endforeach;?></ul></dd>
-        </dl>
-      </article>
-    <? endforeach;?>
-  </section> -->
 
   <section class="events-result">
-    <?php if (!$events) {
-      echo "<p> Dat event kennen we niet. Probeer anders onze andere zoekfunctie's om het te vinden. </p>";
-    } ?>
+    <?php if (!$events): ?>
+      <p class="error"> Nah, da's niks voor DOK. Zoek anders iets leuks via onze zoekfunctie's. </p>
+      <?php endif ?>
       <?php foreach($events as $event): ?>
         <article class="events-result-item">
           <a href="index.php?page=eventdetail&amp;id=<?php echo $event["id"]; ?>" class="events-result-item-link">
@@ -104,5 +93,5 @@
             </div>
           </a>
         </article>
-      <? endforeach;?>
+      <?php endforeach;?>
   </section>

@@ -9,10 +9,8 @@ let resultList;
 export default ({input, result, submit} = {}) => {
   inputField = input;
   resultList = result;
-  // submitBtn = submit;
-  console.log(submit);
-
   submit.style.display = `none`;
+
   input.addEventListener(`input`, inputHandler);
 };
 
@@ -26,12 +24,12 @@ const inputHandler = e => {
     resultList.innerHTML = ``;
   }
 
-  if (searchValue.length < 3) {
+  if (searchValue.length < 1) {
     return;
   }
 
   clearTimeout(timer);
-  const timer = setTimeout(() => validateSearch(searchValue), 700);
+  const timer = setTimeout(() => validateSearch(searchValue), 500);
 
 
 };
@@ -50,9 +48,10 @@ const validateSearch = searchValue => {
 };
 
 const parse = result => {
+  console.log(result);
 
   if (!result || result.length === 0) {
-    resultList.innerHTML = `<p>Geen event gevonden</p>`;
+    resultList.innerHTML = `<p class="error">Nah, da's niks voor DOK. Zoek anders iets leuks via onze zoekfunctie's.</p>`;
     return;
   }
   let resultHTML = `<ol>`;

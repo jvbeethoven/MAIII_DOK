@@ -66,10 +66,24 @@ class EventsController extends Controller {
         'value' => $_GET["tag"]
       );
     }
-
+    //
     // if( isset( $_POST["month"]) ){
     //   var_dump($_POST("month"));
     // }
+
+    if( isset( $_GET["month"]) ){
+      // example: events happening on march first
+      $conditions[0] = array(
+        'field' => 'start',
+        'comparator' => '>',
+        'value' => '2017-'.$_GET["month"].'-01 00:00:00'
+      );
+      $conditions[1] = array(
+        'field' => 'end',
+        'comparator' => '<',
+        'value' => '2017-'.$_GET["month"].'-31 00:00:00'
+      );
+    }
 
     //
     // // example: events happening on march first

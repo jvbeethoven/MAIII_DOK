@@ -2,7 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="DOK – werfplek voor verpozing en creatieve manoeuvres"/>
+    <meta name="author" content="DOK Gent"/>
+    <meta name="keywords" content="DOK, Gent, dokken, creativiteit, humor, zomer, hipsters, kinderen, DIY, concert, tentoonstelling, gezellig"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/img/icon.jpg">
     <title>DOK</title>
     <?php echo $css;?>
   </head>

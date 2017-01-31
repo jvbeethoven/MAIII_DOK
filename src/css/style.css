@@ -89,9 +89,9 @@ select {
     min-height: 9rem;
     z-index: 100;
 
-    font-family: arial;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.8vw;
+    font-size: calc(1.6rem + 1vw);
 
     background-color: white;
 
@@ -192,8 +192,8 @@ select {
   justify-content: center;
 
   &-h {
-    font-size: 3.3vw;
-    font-family: 'Arial Black';
+    font-size: calc(2.2rem + 1vw);
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     margin-bottom: 2rem;
   }
 
@@ -242,7 +242,7 @@ select {
   color: var(--dark-purple);
 
   &-title, &-date, &-place {
-    font-size: 2vw;
+    font-size: calc(1.4rem + 1vw);
   }
 
   &-images {
@@ -318,13 +318,13 @@ select {
 
   &-date {
     position: absolute;
-    top: 87%;
+    top: 85%;
     left: 37%;
   }
 
   &-place {
     position: absolute;
-    top: 92%;
+    top: 93%;
     left: 40%;
   }
 
@@ -395,7 +395,7 @@ select {
   }
 
   &-tag {
-    font-family: 'Arial black';
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     font-size: 2.2rem;
     text-transform: uppercase;
     margin-bottom: .5rem;
@@ -448,7 +448,7 @@ select {
   justify-content: space-between;
 
   &-title {
-    font-family: 'Arial Black';
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     font-size: 3.5rem;
   }
 
@@ -491,7 +491,7 @@ select {
   order: 3;
 
   &-title {
-    font-family: 'Arial Black';
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     font-size: 3.5rem;
     align-self: center;
   }
@@ -570,7 +570,7 @@ select {
     text-decoration: none;
     background-color: var(--light-green);
     padding: 2rem;
-    font-family: 'Arial Black', arial;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
 
     @apply --hover-normal;
     @apply --box-shadow;
@@ -653,7 +653,7 @@ select {
   flex-wrap: wrap;
 
   &-text-title {
-    font-family: 'Arial black', sans-serif;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     font-size: 4rem;
     min-width: 30rem;
     margin-bottom: 1.2rem;
@@ -771,6 +771,8 @@ select {
   }
 }
 
+.error { color: var(--dark-purple); }
+
 .events-result {
   width: 75vw;
   display: flex;
@@ -841,7 +843,7 @@ select {
     &-title {
       font-size: 1.8rem;
       color: var(--dark-purple);
-      font-family: arial;
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
       font-weight: bold;
     }
 
@@ -897,7 +899,7 @@ select {
 
   &-artist-title-h1 {
     font-size: 3rem;
-    font-family: 'Arial Black', Arial, sans-serif;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     color: var(--dark-purple);
     margin-bottom: 2rem;
   }
@@ -986,7 +988,7 @@ select {
   margin: 5rem 1.3rem 0 0;
   order: 1;
 
-  font-family: helvetica, arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   &-intro {
     font-style: italic;
@@ -1015,7 +1017,7 @@ select {
   font-size: 2rem;
 
   &-title {
-    font-family: 'Arial Black', arial, sans-serif;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     color: var(--dark-purple);
     margin-bottom: 1rem;
   }
@@ -1343,9 +1345,9 @@ select {
     justify-content: initial;
 
     &-article-news {
-      height: 13vw;
-      margin-bottom: 8rem;
-      width: 100vw;
+      height: 100%;
+      margin-bottom: 4rem;
+      max-width: 100vw;
 
       &-img { display: none; }
 
@@ -1353,7 +1355,6 @@ select {
         min-height: 10rem;
         width: 100vw;
         padding: 1rem;
-        align-items: center;
       }
 
       &-title::after { display: none; }
